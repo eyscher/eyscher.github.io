@@ -1,0 +1,290 @@
+[
+ {
+  "series": "ny",
+  "slug": "bethesda-arcade",
+  "title": "Bethesda Terrace arcade",
+  "medium": "Digital",
+  "w": 4608,
+  "h": 3456
+ },
+ {
+  "series": "ny",
+  "slug": "camel-trophy",
+  "title": "Camel Trophy Land Rover",
+  "medium": "Digital",
+  "w": 4608,
+  "h": 3456
+ },
+ {
+  "series": "ny",
+  "slug": "street-cat",
+  "title": "Street cat",
+  "medium": "Digital",
+  "w": 4608,
+  "h": 3456
+ },
+ {
+  "series": "ny",
+  "slug": "sleeping-cat",
+  "title": "Asleep in the sun",
+  "medium": "Digital",
+  "w": 4608,
+  "h": 3456
+ },
+ {
+  "series": "ny",
+  "slug": "bench",
+  "title": "Surprised by the things I did",
+  "medium": "Digital",
+  "w": 4608,
+  "h": 3456
+ },
+ {
+  "series": "ny",
+  "slug": "food-truck",
+  "title": "Food truck",
+  "medium": "Digital",
+  "w": 4608,
+  "h": 3456
+ },
+ {
+  "series": "ny",
+  "slug": "silent",
+  "title": "Silent",
+  "medium": "35 mm film",
+  "w": 6774,
+  "h": 4492
+ },
+ {
+  "series": "ny",
+  "slug": "roys",
+  "title": "Roy's Custom Tailor",
+  "medium": "35 mm film",
+  "w": 6774,
+  "h": 4492
+ },
+ {
+  "series": "ny",
+  "slug": "williamsburg",
+  "title": "Williamsburg Bridge",
+  "medium": "35 mm film",
+  "w": 6305,
+  "h": 4181
+ },
+ {
+  "series": "ny",
+  "slug": "pigeon",
+  "title": "Pigeon and shadow",
+  "medium": "35 mm film",
+  "w": 6774,
+  "h": 4492
+ },
+ {
+  "series": "ny",
+  "slug": "hibiscus",
+  "title": "Hibiscus",
+  "medium": "35 mm film",
+  "w": 6774,
+  "h": 4492
+ },
+ {
+  "series": "ny",
+  "slug": "skeleton",
+  "title": "Skeleton under a tree",
+  "medium": "35 mm film",
+  "w": 6305,
+  "h": 4181
+ },
+ {
+  "series": "ny",
+  "slug": "snow",
+  "title": "First snow",
+  "medium": "35 mm film",
+  "w": 6305,
+  "h": 4181
+ },
+ {
+  "series": "mx",
+  "slug": "lightning",
+  "title": "Lightning over the sea, Cozumel",
+  "medium": "Digital",
+  "w": 4608,
+  "h": 3456
+ },
+ {
+  "series": "mx",
+  "slug": "palms",
+  "title": "Palms at dusk",
+  "medium": "Digital",
+  "w": 4608,
+  "h": 3456
+ },
+ {
+  "series": "mx",
+  "slug": "palapa",
+  "title": "Sunset under the palapa",
+  "medium": "Digital",
+  "w": 4608,
+  "h": 3456
+ },
+ {
+  "series": "mx",
+  "slug": "tulum",
+  "title": "Tulum",
+  "medium": "Digital",
+  "w": 4608,
+  "h": 3456
+ },
+ {
+  "series": "mx",
+  "slug": "correos",
+  "title": "Correos, Cozumel",
+  "medium": "Digital",
+  "w": 4608,
+  "h": 3456
+ },
+ {
+  "series": "mx",
+  "slug": "shade-cat",
+  "title": "Cat in the shade, Cozumel",
+  "medium": "Digital",
+  "w": 4608,
+  "h": 3456
+ },
+ {
+  "series": "mx",
+  "slug": "papel-picado",
+  "title": "Papel picado, Cozumel",
+  "medium": "35 mm film",
+  "w": 6774,
+  "h": 4492
+ },
+ {
+  "series": "mx",
+  "slug": "foliage",
+  "title": "Sea through the leaves, Cozumel",
+  "medium": "35 mm film",
+  "w": 6774,
+  "h": 4492
+ },
+ {
+  "series": "mx",
+  "slug": "ferry",
+  "title": "Ferry crossing",
+  "medium": "35 mm film",
+  "w": 6774,
+  "h": 4492
+ },
+ {
+  "series": "mx",
+  "slug": "water-edge",
+  "title": "At the water's edge",
+  "medium": "35 mm film",
+  "w": 6774,
+  "h": 4492
+ },
+ {
+  "series": "mx",
+  "slug": "ruin",
+  "title": "Ruin at golden hour",
+  "medium": "35 mm film",
+  "w": 6774,
+  "h": 4492
+ },
+ {
+  "series": "mx",
+  "slug": "window",
+  "title": "Graffiti window",
+  "medium": "35 mm film",
+  "w": 6774,
+  "h": 4492
+ },
+ {
+  "series": "mx",
+  "slug": "broken-wall",
+  "title": "Sunset through a broken wall",
+  "medium": "35 mm film",
+  "w": 6774,
+  "h": 4492
+ },
+ {
+  "series": "mx",
+  "slug": "broken-wall-2",
+  "title": "Sunset through a broken wall, II",
+  "medium": "35 mm film",
+  "w": 6774,
+  "h": 4492
+ },
+ {
+  "series": "mx",
+  "slug": "beach-sunset",
+  "title": "Beach at sundown",
+  "medium": "35 mm film",
+  "w": 6694,
+  "h": 4438
+ },
+ {
+  "series": "mx",
+  "slug": "van",
+  "title": "Buena Playa",
+  "medium": "35 mm film",
+  "w": 6532,
+  "h": 4332
+ },
+ {
+  "series": "lv",
+  "slug": "jet",
+  "title": "Chain link",
+  "medium": "35 mm film",
+  "w": 6305,
+  "h": 4181
+ },
+ {
+  "series": "lv",
+  "slug": "pinball",
+  "title": "Pinball Hall of Fame",
+  "medium": "35 mm film",
+  "w": 6305,
+  "h": 4181
+ },
+ {
+  "series": "bw",
+  "slug": "s-special",
+  "title": "S Special",
+  "medium": "35 mm film",
+  "w": 6305,
+  "h": 4181
+ },
+ {
+  "series": "bw",
+  "slug": "elevated",
+  "title": "Elevated",
+  "medium": "35 mm film",
+  "w": 6305,
+  "h": 4181
+ },
+ {
+  "series": "bw",
+  "slug": "manhattan-bridge",
+  "title": "Manhattan Bridge",
+  "medium": "35 mm film",
+  "w": 6305,
+  "h": 4181
+ },
+ {
+  "series": "bw",
+  "slug": "festival",
+  "title": "Hudson River Music Festival",
+  "medium": "35 mm film",
+  "w": 6305,
+  "h": 4181
+ },
+ {
+  "series": "lv",
+  "slug": "brooklyn-bowl",
+  "title": "Brooklyn Bowl, Las Vegas",
+  "medium": "35 mm film",
+  "w": 4181,
+  "h": 6305
+ }
+]

@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="EYS of the World: photographs by Eitan Y. Scher, mostly on 35 mm film.">
+<meta name="theme-color" content="#0E151D">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://eyscher.com/photos">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EYS of the World">
+<meta property="og:description" content="EYS of the World: photographs by Eitan Y. Scher, mostly on 35 mm film.">
+<meta property="og:url" content="https://eyscher.com/photos">
+<meta property="og:image" content="https://eyscher.com/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<title>EYS of the World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap">
+<style>
+/* Layout: an image-led page. Title, series links, then each series as a masonry of photographs; click opens a full-screen viewer.
+   Same tokens and dark-first theme as the main page. */
+:root {
+  --paper: #0E151D; --surface: #131C27; --ink: #E3E9F0; --ink-2: #A6B2C1; --ink-3: #8592A3;
+  --rule: #263240; --accent: #8DB0EA; --accent-ink: #0E151D; --amber: #D99A52;
+  --scrim: rgba(6, 9, 13, 0.985); --chip: #1E2835;
+  --glow-a: rgba(95, 139, 212, 0.16); --glow-b: rgba(217, 154, 82, 0.10);
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --text: "Newsreader", Georgia, "Times New Roman", serif;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --paper: #F1F4F7; --surface: #FBFCFD; --ink: #15202C; --ink-2: #46556A; --ink-3: #66758A;
+  --rule: #D2DAE3; --accent: #2B5DA8; --accent-ink: #FFFFFF; --amber: #B8661C;
+  --scrim: rgba(241, 244, 247, 0.985); --chip: #E3E9F1;
+  --glow-a: rgba(43, 93, 168, 0.08); --glow-b: rgba(184, 102, 28, 0.06);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+img { max-width: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--paper); color: var(--ink); font-family: var(--text); font-size: 19px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+p { margin: 0; }
+h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; }
+.wrap { max-width: 1120px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 40px); }
+
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper);
+  background: color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+.top .wrap { display: flex; align-items: center; gap: 24px; min-height: 56px; max-width: 1120px; }
+.mark { font-family: var(--display); font-weight: 760; font-stretch: 112%; font-size: 17px; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.nav { display: flex; gap: 22px; margin-left: auto; overflow-x: auto; scrollbar-width: none; min-width: 0; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a { font-family: var(--display); font-size: 15px; font-weight: 500; color: var(--ink-2); text-decoration: none; white-space: nowrap; padding-block: 16px; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--ink); }
+.nav a[aria-current="page"] { box-shadow: inset 0 -2px 0 var(--amber); }
+.theme-btn { flex: none; display: inline-grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--rule); border-radius: 50%; background: transparent; color: var(--ink-2); cursor: pointer; padding: 0; }
+.theme-btn:hover { color: var(--ink); }
+.theme-btn svg { width: 17px; height: 17px; }
+.theme-btn .sun { display: none; }
+:root[data-theme="light"] .theme-btn .sun { display: block; }
+:root[data-theme="light"] .theme-btn .moon { display: none; }
+@media (max-width: 640px) {
+  .top .wrap { gap: 14px; }
+  .nav { gap: 16px; -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent); mask-image: linear-gradient(90deg, #000 82%, transparent); padding-right: 24px; }
+  .nav a { font-size: 14px; }
+}
+
+/* Title: the name set wide, the way the eye takes in a whole scene */
+.intro { background: radial-gradient(55% 80% at 80% 10%, var(--glow-a), transparent 70%), radial-gradient(35% 60% at 15% 100%, var(--glow-b), transparent 70%); }
+.intro .wrap { padding-block: clamp(56px, 9vw, 120px) clamp(32px, 5vw, 56px); max-width: 1120px; }
+.intro h1 { font-size: clamp(48px, 10vw, 128px); font-weight: 800; font-stretch: 125%; line-height: 0.92; letter-spacing: -0.03em; }
+.intro p { margin-top: 24px; font-size: clamp(19px, 2vw, 23px); color: var(--ink-2); max-width: 38em; line-height: 1.5; }
+.series-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.series-links a { font-family: var(--display); font-size: 15px; font-weight: 550; color: var(--ink); text-decoration: none; background: var(--chip); border-radius: 999px; padding: 7px 14px; display: inline-flex; gap: 8px; align-items: baseline; }
+.series-links a:hover { background: var(--rule); }
+.series-links small { font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
+/* Filters */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.filters button { font-family: var(--display); font-size: 15px; font-weight: 550; color: var(--ink); background: var(--chip); border: 1px solid transparent; border-radius: 999px; padding: 7px 14px; display: inline-flex; gap: 8px; align-items: baseline; cursor: pointer; }
+.filters button:hover { background: var(--rule); }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.filters button[aria-pressed="true"] small { color: var(--paper); opacity: 0.7; }
+.filters small { font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
+/* Gallery: one sequence, laid out left to right into the shortest column */
+.gallery { padding-block: clamp(24px, 4vw, 48px) clamp(48px, 7vw, 88px); border-top: 1px solid var(--rule); }
+.grid { columns: 3 280px; column-gap: clamp(10px, 1.6vw, 20px); }
+.grid.masonry { columns: auto; display: flex; gap: clamp(10px, 1.6vw, 20px); align-items: flex-start; }
+.grid .col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: clamp(10px, 1.6vw, 20px); }
+.grid figure { margin: 0 0 clamp(10px, 1.6vw, 20px); break-inside: avoid; }
+.grid.masonry figure { margin: 0; }
+.grid button { display: block; width: 100%; padding: 0; border: 0; background: var(--surface); cursor: zoom-in; border-radius: 2px; overflow: hidden; }
+.grid img { display: block; width: 100%; height: auto; transition: transform .5s cubic-bezier(.2,.7,.1,1), filter .3s; }
+.grid button:hover img { transform: scale(1.015); filter: brightness(1.06); }
+@media (prefers-reduced-motion: reduce) { .grid img { transition: none; } .grid button:hover img { transform: none; } }
+.grid figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; padding-top: 8px; font-family: var(--display); font-size: 14px; color: var(--ink-2); }
+.grid figcaption span:last-child { color: var(--ink-3); font-size: 13px; }
+
+footer { border-top: 1px solid var(--rule); padding-block: 32px 48px; font-family: var(--display); font-size: 14px; color: var(--ink-3); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; max-width: 1120px; }
+
+/* Viewer */
+.viewer { position: fixed; inset: 0; z-index: 100; background: var(--scrim); display: grid; grid-template-rows: auto minmax(0, 1fr) auto; padding: calc(env(safe-area-inset-top, 0px) + 10px) 12px calc(env(safe-area-inset-bottom, 0px) + 14px); }
+.viewer-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: var(--display); font-size: 14px; color: var(--ink-3); font-variant-numeric: tabular-nums; padding-inline: 4px; }
+.viewer-stage { position: relative; display: grid; place-items: center; min-height: 0; }
+.viewer-stage img { max-width: 100%; max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); object-fit: contain; display: block; box-shadow: 0 10px 40px rgba(0,0,0,.35); }
+.viewer-cap { text-align: center; padding-top: 12px; font-family: var(--display); }
+.viewer-cap b { display: block; font-size: 17px; font-weight: 650; color: var(--ink); }
+.viewer-cap span { font-size: 14px; color: var(--ink-3); }
+.vbtn { border: 1px solid var(--rule); background: color-mix(in srgb, var(--paper) 70%, transparent); color: var(--ink); border-radius: 999px; width: 44px; height: 44px; display: inline-grid; place-items: center; cursor: pointer; font-size: 20px; line-height: 1; padding: 0; }
+.vbtn:hover { border-color: var(--ink-3); }
+.vprev, .vnext { position: absolute; top: 50%; transform: translateY(-50%); }
+.vprev { left: 4px; } .vnext { right: 4px; }
+@media (max-width: 640px) { .vprev, .vnext { top: auto; bottom: 8px; transform: none; } }
+</style>
+<script>
+try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "light" || savedTheme === "dark") document.documentElement.setAttribute("data-theme", savedTheme); } catch (e) {}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="index.html">E.Y. Scher</a>
+    <nav class="nav" aria-label="Site">
+      <a href="index.html#research">Research</a>
+      <a href="index.html#work">Projects</a>
+      <a href="photos.html" aria-current="page">Photography</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <button class="theme-btn" type="button" id="theme-btn" aria-label="Switch to light mode" title="Switch to light mode">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="intro">
+    <div class="wrap">
+      <h1>EYS of the World</h1>
+      <p>Photographs by Eitan Y. Scher from New York, Mexico and Las Vegas. Most are on 35 mm film with a Pentax Super Program; some are digital, on an Olympus OM-D E-M10 Mark III.</p>
+      <div class="filters" role="group" aria-label="Show photographs from">
+        <button type="button" data-f="all" aria-pressed="true">All <small>36</small></button>
+        <button type="button" data-f="color" aria-pressed="false">Color film <small>20</small></button>
+        <button type="button" data-f="bw" aria-pressed="false">Black-and-white film <small>4</small></button>
+        <button type="button" data-f="digital" aria-pressed="false">Digital <small>12</small></button>
+      </div>
+    </div>
+  </div>
+  <section class="gallery" aria-label="Photographs">
+    <div class="wrap">
+      <div class="grid" id="grid">
+        <figure data-tags="digital" data-ratio="1.3333">
+          <button type="button" data-full="img/bethesda-arcade.jpg" data-title="Bethesda Terrace arcade" data-meta="New York, Digital" aria-label="Open Bethesda Terrace arcade">
+            <img src="img/bethesda-arcade-sm.jpg" srcset="img/bethesda-arcade-sm.jpg 900w, img/bethesda-arcade.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="675" alt="Bethesda Terrace arcade" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Bethesda Terrace arcade</span><span>New York, Digital</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/broken-wall.jpg" data-title="Sunset through a broken wall" data-meta="Mexico, 35 mm film" aria-label="Open Sunset through a broken wall">
+            <img src="img/broken-wall-sm.jpg" srcset="img/broken-wall-sm.jpg 900w, img/broken-wall.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Sunset through a broken wall" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Sunset through a broken wall</span><span>Mexico, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="bw" data-ratio="1.5080">
+          <button type="button" data-full="img/s-special.jpg" data-title="S Special" data-meta="New York, 35 mm film" aria-label="Open S Special">
+            <img src="img/s-special-sm.jpg" srcset="img/s-special-sm.jpg 900w, img/s-special.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="S Special" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>S Special</span><span>New York, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="digital" data-ratio="1.3333">
+          <button type="button" data-full="img/lightning.jpg" data-title="Lightning over the sea, Cozumel" data-meta="Mexico, Digital" aria-label="Open Lightning over the sea, Cozumel">
+            <img src="img/lightning-sm.jpg" srcset="img/lightning-sm.jpg 900w, img/lightning.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="675" alt="Lightning over the sea, Cozumel" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Lightning over the sea, Cozumel</span><span>Mexico, Digital</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/pigeon.jpg" data-title="Pigeon and shadow" data-meta="New York, 35 mm film" aria-label="Open Pigeon and shadow">
+            <img src="img/pigeon-sm.jpg" srcset="img/pigeon-sm.jpg 900w, img/pigeon.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Pigeon and shadow" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Pigeon and shadow</span><span>New York, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="0.6631">
+          <button type="button" data-full="img/brooklyn-bowl.jpg" data-title="Brooklyn Bowl, Las Vegas" data-meta="Las Vegas, 35 mm film" aria-label="Open Brooklyn Bowl, Las Vegas">
+            <img src="img/brooklyn-bowl-sm.jpg" srcset="img/brooklyn-bowl-sm.jpg 900w, img/brooklyn-bowl.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="597" height="900" alt="Brooklyn Bowl, Las Vegas" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Brooklyn Bowl, Las Vegas</span><span>Las Vegas, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/ruin.jpg" data-title="Ruin at golden hour" data-meta="Mexico, 35 mm film" aria-label="Open Ruin at golden hour">
+            <img src="img/ruin-sm.jpg" srcset="img/ruin-sm.jpg 900w, img/ruin.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Ruin at golden hour" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Ruin at golden hour</span><span>Mexico, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="digital" data-ratio="1.3333">
+          <button type="button" data-full="img/camel-trophy.jpg" data-title="Camel Trophy Land Rover" data-meta="New York, Digital" aria-label="Open Camel Trophy Land Rover">
+            <img src="img/camel-trophy-sm.jpg" srcset="img/camel-trophy-sm.jpg 900w, img/camel-trophy.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="675" alt="Camel Trophy Land Rover" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Camel Trophy Land Rover</span><span>New York, Digital</span></figcaption>
+        </figure>
+        <figure data-tags="bw" data-ratio="1.5080">
+          <button type="button" data-full="img/elevated.jpg" data-title="Elevated" data-meta="New York, 35 mm film" aria-label="Open Elevated">
+            <img src="img/elevated-sm.jpg" srcset="img/elevated-sm.jpg 900w, img/elevated.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Elevated" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Elevated</span><span>New York, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/papel-picado.jpg" data-title="Papel picado, Cozumel" data-meta="Mexico, 35 mm film" aria-label="Open Papel picado, Cozumel">
+            <img src="img/papel-picado-sm.jpg" srcset="img/papel-picado-sm.jpg 900w, img/papel-picado.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Papel picado, Cozumel" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Papel picado, Cozumel</span><span>Mexico, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/hibiscus.jpg" data-title="Hibiscus" data-meta="New York, 35 mm film" aria-label="Open Hibiscus">
+            <img src="img/hibiscus-sm.jpg" srcset="img/hibiscus-sm.jpg 900w, img/hibiscus.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Hibiscus" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Hibiscus</span><span>New York, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/jet.jpg" data-title="Chain link" data-meta="Las Vegas, 35 mm film" aria-label="Open Chain link">
+            <img src="img/jet-sm.jpg" srcset="img/jet-sm.jpg 900w, img/jet.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Chain link" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Chain link</span><span>Las Vegas, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5078">
+          <button type="button" data-full="img/van.jpg" data-title="Buena Playa" data-meta="Mexico, 35 mm film" aria-label="Open Buena Playa">
+            <img src="img/van-sm.jpg" srcset="img/van-sm.jpg 900w, img/van.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Buena Playa" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Buena Playa</span><span>Mexico, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/silent.jpg" data-title="Silent" data-meta="New York, 35 mm film" aria-label="Open Silent">
+            <img src="img/silent-sm.jpg" srcset="img/silent-sm.jpg 900w, img/silent.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Silent" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Silent</span><span>New York, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="digital" data-ratio="1.3333">
+          <button type="button" data-full="img/palms.jpg" data-title="Palms at dusk" data-meta="Mexico, Digital" aria-label="Open Palms at dusk">
+            <img src="img/palms-sm.jpg" srcset="img/palms-sm.jpg 900w, img/palms.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="675" alt="Palms at dusk" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Palms at dusk</span><span>Mexico, Digital</span></figcaption>
+        </figure>
+        <figure data-tags="digital" data-ratio="1.3333">
+          <button type="button" data-full="img/bench.jpg" data-title="Surprised by the things I did" data-meta="New York, Digital" aria-label="Open Surprised by the things I did">
+            <img src="img/bench-sm.jpg" srcset="img/bench-sm.jpg 900w, img/bench.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="675" alt="Surprised by the things I did" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Surprised by the things I did</span><span>New York, Digital</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/window.jpg" data-title="Graffiti window" data-meta="Mexico, 35 mm film" aria-label="Open Graffiti window">
+            <img src="img/window-sm.jpg" srcset="img/window-sm.jpg 900w, img/window.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Graffiti window" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Graffiti window</span><span>Mexico, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="bw" data-ratio="1.5080">
+          <button type="button" data-full="img/manhattan-bridge.jpg" data-title="Manhattan Bridge" data-meta="New York, 35 mm film" aria-label="Open Manhattan Bridge">
+            <img src="img/manhattan-bridge-sm.jpg" srcset="img/manhattan-bridge-sm.jpg 900w, img/manhattan-bridge.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Manhattan Bridge" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Manhattan Bridge</span><span>New York, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="digital" data-ratio="1.3333">
+          <button type="button" data-full="img/street-cat.jpg" data-title="Street cat" data-meta="New York, Digital" aria-label="Open Street cat">
+            <img src="img/street-cat-sm.jpg" srcset="img/street-cat-sm.jpg 900w, img/street-cat.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="675" alt="Street cat" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Street cat</span><span>New York, Digital</span></figcaption>
+        </figure>
+        <figure data-tags="digital" data-ratio="1.3333">
+          <button type="button" data-full="img/tulum.jpg" data-title="Tulum" data-meta="Mexico, Digital" aria-label="Open Tulum">
+            <img src="img/tulum-sm.jpg" srcset="img/tulum-sm.jpg 900w, img/tulum.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="675" alt="Tulum" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Tulum</span><span>Mexico, Digital</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/roys.jpg" data-title="Roy&#x27;s Custom Tailor" data-meta="New York, 35 mm film" aria-label="Open Roy&#x27;s Custom Tailor">
+            <img src="img/roys-sm.jpg" srcset="img/roys-sm.jpg 900w, img/roys.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Roy&#x27;s Custom Tailor" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Roy&#x27;s Custom Tailor</span><span>New York, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/ferry.jpg" data-title="Ferry crossing" data-meta="Mexico, 35 mm film" aria-label="Open Ferry crossing">
+            <img src="img/ferry-sm.jpg" srcset="img/ferry-sm.jpg 900w, img/ferry.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Ferry crossing" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Ferry crossing</span><span>Mexico, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/pinball.jpg" data-title="Pinball Hall of Fame" data-meta="Las Vegas, 35 mm film" aria-label="Open Pinball Hall of Fame">
+            <img src="img/pinball-sm.jpg" srcset="img/pinball-sm.jpg 900w, img/pinball.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Pinball Hall of Fame" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Pinball Hall of Fame</span><span>Las Vegas, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/williamsburg.jpg" data-title="Williamsburg Bridge" data-meta="New York, 35 mm film" aria-label="Open Williamsburg Bridge">
+            <img src="img/williamsburg-sm.jpg" srcset="img/williamsburg-sm.jpg 900w, img/williamsburg.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Williamsburg Bridge" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Williamsburg Bridge</span><span>New York, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/water-edge.jpg" data-title="At the water&#x27;s edge" data-meta="Mexico, 35 mm film" aria-label="Open At the water&#x27;s edge">
+            <img src="img/water-edge-sm.jpg" srcset="img/water-edge-sm.jpg 900w, img/water-edge.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="At the water&#x27;s edge" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>At the water&#x27;s edge</span><span>Mexico, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/skeleton.jpg" data-title="Skeleton under a tree" data-meta="New York, 35 mm film" aria-label="Open Skeleton under a tree">
+            <img src="img/skeleton-sm.jpg" srcset="img/skeleton-sm.jpg 900w, img/skeleton.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Skeleton under a tree" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Skeleton under a tree</span><span>New York, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="digital" data-ratio="1.3333">
+          <button type="button" data-full="img/palapa.jpg" data-title="Sunset under the palapa" data-meta="Mexico, Digital" aria-label="Open Sunset under the palapa">
+            <img src="img/palapa-sm.jpg" srcset="img/palapa-sm.jpg 900w, img/palapa.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="675" alt="Sunset under the palapa" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Sunset under the palapa</span><span>Mexico, Digital</span></figcaption>
+        </figure>
+        <figure data-tags="bw" data-ratio="1.5080">
+          <button type="button" data-full="img/festival.jpg" data-title="Hudson River Music Festival" data-meta="New York, 35 mm film" aria-label="Open Hudson River Music Festival">
+            <img src="img/festival-sm.jpg" srcset="img/festival-sm.jpg 900w, img/festival.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Hudson River Music Festival" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Hudson River Music Festival</span><span>New York, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="digital" data-ratio="1.3333">
+          <button type="button" data-full="img/food-truck.jpg" data-title="Food truck" data-meta="New York, Digital" aria-label="Open Food truck">
+            <img src="img/food-truck-sm.jpg" srcset="img/food-truck-sm.jpg 900w, img/food-truck.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="675" alt="Food truck" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Food truck</span><span>New York, Digital</span></figcaption>
+        </figure>
+        <figure data-tags="digital" data-ratio="1.3333">
+          <button type="button" data-full="img/correos.jpg" data-title="Correos, Cozumel" data-meta="Mexico, Digital" aria-label="Open Correos, Cozumel">
+            <img src="img/correos-sm.jpg" srcset="img/correos-sm.jpg 900w, img/correos.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="675" alt="Correos, Cozumel" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Correos, Cozumel</span><span>Mexico, Digital</span></figcaption>
+        </figure>
+        <figure data-tags="digital" data-ratio="1.3333">
+          <button type="button" data-full="img/sleeping-cat.jpg" data-title="Asleep in the sun" data-meta="New York, Digital" aria-label="Open Asleep in the sun">
+            <img src="img/sleeping-cat-sm.jpg" srcset="img/sleeping-cat-sm.jpg 900w, img/sleeping-cat.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="675" alt="Asleep in the sun" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Asleep in the sun</span><span>New York, Digital</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/foliage.jpg" data-title="Sea through the leaves, Cozumel" data-meta="Mexico, 35 mm film" aria-label="Open Sea through the leaves, Cozumel">
+            <img src="img/foliage-sm.jpg" srcset="img/foliage-sm.jpg 900w, img/foliage.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Sea through the leaves, Cozumel" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Sea through the leaves, Cozumel</span><span>Mexico, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/broken-wall-2.jpg" data-title="Sunset through a broken wall, II" data-meta="Mexico, 35 mm film" aria-label="Open Sunset through a broken wall, II">
+            <img src="img/broken-wall-2-sm.jpg" srcset="img/broken-wall-2-sm.jpg 900w, img/broken-wall-2.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Sunset through a broken wall, II" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Sunset through a broken wall, II</span><span>Mexico, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="digital" data-ratio="1.3333">
+          <button type="button" data-full="img/shade-cat.jpg" data-title="Cat in the shade, Cozumel" data-meta="Mexico, Digital" aria-label="Open Cat in the shade, Cozumel">
+            <img src="img/shade-cat-sm.jpg" srcset="img/shade-cat-sm.jpg 900w, img/shade-cat.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="675" alt="Cat in the shade, Cozumel" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Cat in the shade, Cozumel</span><span>Mexico, Digital</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5083">
+          <button type="button" data-full="img/beach-sunset.jpg" data-title="Beach at sundown" data-meta="Mexico, 35 mm film" aria-label="Open Beach at sundown">
+            <img src="img/beach-sunset-sm.jpg" srcset="img/beach-sunset-sm.jpg 900w, img/beach-sunset.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="Beach at sundown" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>Beach at sundown</span><span>Mexico, 35 mm film</span></figcaption>
+        </figure>
+        <figure data-tags="color" data-ratio="1.5080">
+          <button type="button" data-full="img/snow.jpg" data-title="First snow" data-meta="New York, 35 mm film" aria-label="Open First snow">
+            <img src="img/snow-sm.jpg" srcset="img/snow-sm.jpg 900w, img/snow.jpg 2000w" sizes="(max-width: 600px) 100vw, 33vw" width="900" height="597" alt="First snow" loading="lazy" decoding="async">
+          </button>
+          <figcaption><span>First snow</span><span>New York, 35 mm film</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Eitan Y. Scher. Please ask before reusing these photographs.</span>
+    <a href="index.html">Back to research</a>
+  </div>
+</footer>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Photograph viewer" hidden>
+  <div class="viewer-bar"><span id="v-count"></span><button class="vbtn" type="button" id="v-close" aria-label="Close viewer">✕</button></div>
+  <div class="viewer-stage">
+    <img id="v-img" alt="">
+    <button class="vbtn vprev" type="button" id="v-prev" aria-label="Previous photograph">‹</button>
+    <button class="vbtn vnext" type="button" id="v-next" aria-label="Next photograph">›</button>
+  </div>
+  <div class="viewer-cap"><b id="v-title"></b><span id="v-meta"></span></div>
+</div>
+
+<script>
+(function () {
+  var grid = document.getElementById("grid");
+  var figs = Array.prototype.slice.call(grid.querySelectorAll("figure"));
+  var items = [];
+  function visibleItems() { items = figs.filter(function (f) { return !f.hidden; }).map(function (f) { return f.querySelector("button"); }); }
+  function layout() {
+    var w = grid.clientWidth || window.innerWidth;
+    var n = w < 560 ? 1 : (w < 900 ? 2 : 3);
+    var cols = [], heights = [];
+    grid.innerHTML = "";
+    for (var i = 0; i < n; i++) { var c = document.createElement("div"); c.className = "col"; grid.appendChild(c); cols.push(c); heights.push(0); }
+    figs.forEach(function (f) {
+      if (f.hidden) { cols[0].appendChild(f); return; }
+      var k = heights.indexOf(Math.min.apply(null, heights));
+      cols[k].appendChild(f); heights[k] += 1 / parseFloat(f.dataset.ratio) + 0.12;
+    });
+    grid.classList.add("masonry");
+  }
+  var lastW = 0, rt = null;
+  layout(); visibleItems();
+  window.addEventListener("resize", function () { var w = grid.clientWidth; if (w === lastW) return; lastW = w; clearTimeout(rt); rt = setTimeout(layout, 80); });
+  Array.prototype.forEach.call(document.querySelectorAll(".filters button"), function (b, _, all) {
+    b.addEventListener("click", function () {
+      var f = b.dataset.f;
+      Array.prototype.forEach.call(all, function (o) { o.setAttribute("aria-pressed", String(o === b)); });
+      figs.forEach(function (fig) { fig.hidden = !(f === "all" || (" " + fig.dataset.tags + " ").indexOf(" " + f + " ") !== -1); });
+      layout(); visibleItems();
+    });
+  });
+  var viewer = document.getElementById("viewer"), img = document.getElementById("v-img");
+  var vt = document.getElementById("v-title"), vm = document.getElementById("v-meta"), vc = document.getElementById("v-count");
+  var idx = 0, opener = null;
+  function show(i) {
+    idx = (i + items.length) % items.length;
+    var b = items[idx];
+    img.src = b.dataset.full; img.alt = b.dataset.title;
+    vt.textContent = b.dataset.title; vm.textContent = b.dataset.meta;
+    vc.textContent = (idx + 1) + " of " + items.length;
+    var pre = new Image(); pre.src = items[(idx + 1) % items.length].dataset.full;
+  }
+  function open(i) {
+    opener = items[i]; show(i); viewer.hidden = false;
+    document.body.style.overflow = "hidden";
+    document.getElementById("v-close").focus();
+  }
+  function close() {
+    viewer.hidden = true; document.body.style.overflow = "";
+    if (opener) opener.focus();
+  }
+  figs.forEach(function (f) { var b = f.querySelector("button"); b.addEventListener("click", function () { open(items.indexOf(b)); }); });
+  document.getElementById("v-close").addEventListener("click", close);
+  document.getElementById("v-prev").addEventListener("click", function () { show(idx - 1); });
+  document.getElementById("v-next").addEventListener("click", function () { show(idx + 1); });
+  viewer.addEventListener("click", function (e) { if (e.target === viewer || e.target.classList.contains("viewer-stage")) close(); });
+  document.addEventListener("keydown", function (e) {
+    if (viewer.hidden) return;
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowRight") show(idx + 1);
+    else if (e.key === "ArrowLeft") show(idx - 1);
+    else if (e.key === "Tab") {
+      var f = Array.prototype.slice.call(viewer.querySelectorAll("button"));
+      var k = f.indexOf(document.activeElement);
+      if (e.shiftKey && k <= 0) { f[f.length - 1].focus(); e.preventDefault(); }
+      else if (!e.shiftKey && k === f.length - 1) { f[0].focus(); e.preventDefault(); }
+    }
+  });
+  var sx = null;
+  viewer.addEventListener("touchstart", function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  viewer.addEventListener("touchend", function (e) {
+    if (sx === null) return; var dx = e.changedTouches[0].clientX - sx; sx = null;
+    if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+  });
+
+  var themeBtn = document.getElementById("theme-btn");
+  function sync() { var l = document.documentElement.getAttribute("data-theme") === "light"; var t = l ? "Switch to dark mode" : "Switch to light mode"; themeBtn.setAttribute("aria-label", t); themeBtn.title = t; }
+  sync();
+  themeBtn.addEventListener("click", function () {
+    var next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("eys-theme", next); } catch (e) {}
+    sync();
+  });
+})();
+</script>
+</body>
+</html>

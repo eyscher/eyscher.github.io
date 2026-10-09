@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Eitan Y. Scher: psychology researcher and research ethics professional studying how meditation, awe and altered states change the experience of time and self.">
+<meta name="theme-color" content="#0E151D">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://eyscher.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eitan Y. Scher">
+<meta property="og:description" content="Eitan Y. Scher: psychology researcher and research ethics professional studying how meditation, awe and altered states change the experience of time and self.">
+<meta property="og:url" content="https://eyscher.com/">
+<meta property="og:image" content="https://eyscher.com/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<title>E.Y. Scher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap">
+<style>
+/* Layout: one left-aligned reading column (~66ch) inside a 1120px frame; figures break out to the full frame.
+   Idea: real time is set wide, remembered time is set narrow. Width carries meaning only in the featured headline. */
+/* Dark-first ("blue hour"): dark is the default for every visitor; the header switch offers light. */
+:root {
+  --paper: #0E151D;
+  --surface: #131C27;
+  --ink: #E3E9F0;
+  --ink-2: #A6B2C1;
+  --ink-3: #8592A3;
+  --rule: #263240;
+  --grid: #1D2733;
+  --accent: #8DB0EA;
+  --accent-ink: #0E151D;
+  --med: #5F8BD4;
+  --aud: #C77F3C;
+  --band: #1B2532;
+  --z1: #2C394A;
+  --z2: #222D3A;
+  --z3: #18212C;
+  --chip: #1E2835;
+  --film: #080B0F;
+  --film-edge: #1A1F26;
+  --film-print: #C9A15A;
+  --shadow: rgba(0, 0, 0, 0.45);
+  --amber: #D99A52;
+  --glow-a: rgba(95, 139, 212, 0.20);
+  --glow-b: rgba(217, 154, 82, 0.09);
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --text: "Newsreader", Georgia, "Times New Roman", serif;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --paper: #F1F4F7; --surface: #FBFCFD; --ink: #15202C; --ink-2: #46556A; --ink-3: #66758A;
+  --rule: #D2DAE3; --grid: #E2E8EE; --accent: #2B5DA8; --accent-ink: #FFFFFF;
+  --med: #2B5DA8; --aud: #B8661C; --band: #E6ECF2; --z1: #D3DCE7; --z2: #E1E7EE; --z3: #F0F3F6;
+  --chip: #E3E9F1; --film: #1B1F24; --film-edge: #2B3038; --film-print: #C9A15A;
+  --shadow: rgba(15, 25, 40, 0.14);
+  --amber: #B8661C; --glow-a: rgba(43, 93, 168, 0.10); --glow-b: rgba(184, 102, 28, 0.06);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+img { max-width: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 19px;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+p { margin: 0; }
+h1, h2, h3, h4 { font-family: var(--display); margin: 0; text-wrap: balance; color: var(--ink); }
+
+.wrap { max-width: 1120px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 40px); }
+.measure { max-width: 66ch; }
+.stack { display: grid; gap: 1.1em; align-content: start; }
+
+/* Header */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--paper);
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+}
+.top .wrap { display: flex; align-items: center; gap: 24px; min-height: 56px; }
+.mark {
+  font-family: var(--display); font-weight: 760; font-stretch: 112%;
+  font-size: 17px; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; white-space: nowrap;
+}
+.nav { display: flex; gap: 22px; margin-left: auto; overflow-x: auto; scrollbar-width: none; min-width: 0; }
+.nav::-webkit-scrollbar { display: none; }
+@media (max-width: 640px) {
+  .top .wrap { gap: 14px; }
+  .nav { gap: 16px; -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent); mask-image: linear-gradient(90deg, #000 82%, transparent); padding-right: 24px; }
+  .nav a { font-size: 14px; }
+}
+.nav a {
+  font-family: var(--display); font-size: 15px; font-weight: 500; color: var(--ink-2);
+  text-decoration: none; white-space: nowrap; padding-block: 16px;
+}
+.nav a:hover { color: var(--ink); }
+.theme-btn {
+  flex: none; display: inline-grid; place-items: center; width: 36px; height: 36px;
+  border: 1px solid var(--rule); border-radius: 50%; background: transparent; color: var(--ink-2); cursor: pointer; padding: 0;
+}
+.theme-btn:hover { color: var(--ink); border-color: var(--ink-3); }
+.theme-btn svg { width: 17px; height: 17px; }
+.theme-btn .sun { display: none; }
+:root[data-theme="light"] .theme-btn .sun { display: block; }
+:root[data-theme="light"] .theme-btn .moon { display: none; }
+
+/* Hero: text on the left, a clock on the right whose ticks bunch and stretch the way remembered time does */
+.hero-band { background:
+  radial-gradient(60% 70% at 85% 20%, var(--glow-a), transparent 70%),
+  radial-gradient(40% 50% at 70% 85%, var(--glow-b), transparent 70%); }
+.hero { padding-block: clamp(56px, 9vw, 112px) clamp(48px, 7vw, 88px);
+  display: grid; grid-template-columns: minmax(0, 1fr) clamp(240px, 27vw, 330px); column-gap: clamp(24px, 4vw, 56px); position: relative; }
+.hero > h1 { grid-column: 1 / -1; }
+.hero > .lede, .hero > .facts, .hero > .actions { grid-column: 1; }
+.dial-box { grid-column: 2; grid-row: 2 / span 3; align-self: start; margin-top: 30px; display: grid; gap: 10px; justify-items: center; }
+.dial { width: 100%; aspect-ratio: 1; max-width: 100%; display: block; }
+.dial-note { font-family: var(--display); font-size: 13px; line-height: 1.45; color: var(--ink-3); text-align: center; max-width: 26ch; }
+@media (max-width: 860px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .dial-box { position: absolute; top: clamp(12px, 4vw, 32px); right: 0; width: clamp(150px, 40vw, 240px); margin: 0; opacity: 0.4; pointer-events: none; z-index: 0; grid-column: auto; grid-row: auto; }
+  .dial-note { display: none; }
+  .hero > *:not(.dial-box) { position: relative; z-index: 1; }
+}
+.hero h1 {
+  font-size: clamp(50px, 9.2vw, 108px); font-weight: 780; font-stretch: 112%;
+  line-height: 0.95; letter-spacing: -0.025em;
+}
+.hero .lede { font-size: clamp(21px, 2.3vw, 27px); line-height: 1.42; margin-top: 28px; max-width: 30em; color: var(--ink); }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 10px 28px; margin: 40px 0 0; max-width: 46em; }
+.facts dt { font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--ink-3); padding-top: 3px; }
+.facts dd { margin: 0; font-size: 18px; color: var(--ink-2); min-width: 0; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; align-items: center; }
+.btn {
+  font-family: var(--display); font-size: 16px; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 18px; border-radius: 4px; text-decoration: none; border: 1px solid var(--rule);
+  color: var(--ink); background: transparent; cursor: pointer; line-height: 1.2;
+}
+.btn:hover { border-color: var(--ink-3); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.primary:hover { filter: brightness(1.08); }
+
+/* Sections */
+section.band { border-top: 1px solid var(--rule); padding-block: clamp(64px, 9vw, 120px); }
+.sec-head { display: grid; gap: 14px; margin-bottom: clamp(32px, 4vw, 48px); }
+.sec-head h2 { font-size: clamp(32px, 4.4vw, 50px); font-weight: 700; font-stretch: 88%; line-height: 1.02; letter-spacing: -0.015em; }
+.sec-head p { color: var(--ink-2); max-width: 60ch; }
+.status { font-family: var(--display); font-size: 15px; font-weight: 500; color: var(--ink-2); }
+.status b { font-weight: 650; color: var(--ink); }
+
+/* Featured headline: line two is set narrower, the way meditators remembered the eight minutes */
+.compress { font-size: clamp(36px, 6vw, 76px); font-weight: 720; line-height: 1.0; letter-spacing: -0.02em; }
+.compress span { display: block; }
+.compress .l1 { font-stretch: 100%; }
+.compress .sub { display: block; font-size: 0.5em; margin-top: 0.4em; line-height: 1.1; color: var(--ink-2); font-weight: 650; letter-spacing: -0.01em; }
+.compress .sub span { display: inline; }
+.compress .l2 { font-stretch: 62%; transition: font-stretch 1.8s cubic-bezier(.2,.7,.1,1); }
+.compress.pre .l2 { font-stretch: 100%; }
+@media (prefers-reduced-motion: reduce) { .compress .l2 { transition: none; } }
+
+h3 { font-size: clamp(24px, 2.6vw, 30px); font-weight: 680; font-stretch: 92%; line-height: 1.12; letter-spacing: -0.01em; }
+h4 { font-size: 21px; font-weight: 650; font-stretch: 95%; line-height: 1.2; }
+.sub { font-size: 16px; color: var(--ink-2); font-family: var(--display); line-height: 1.45; }
+.block { margin-top: clamp(48px, 6vw, 80px); }
+
+/* Design grid */
+.design { display: grid; grid-template-columns: auto 1fr 1fr; gap: 2px; margin-top: 22px; max-width: 760px; font-family: var(--display); }
+.design .hd { font-size: 14px; font-weight: 600; color: var(--ink-3); padding: 6px 12px; align-self: end; }
+.design .rh { font-size: 14px; font-weight: 650; color: var(--ink); padding: 14px 12px 14px 0; display: flex; align-items: center; gap: 8px; }
+.design .cell { background: var(--surface); border: 1px solid var(--rule); padding: 14px; min-width: 0; }
+.design .cell .what { font-size: 15px; line-height: 1.35; color: var(--ink); }
+.design .cell .n { font-size: 13px; color: var(--ink-3); margin-top: 6px; font-variant-numeric: tabular-nums; }
+.key { width: 10px; height: 10px; border-radius: 2px; flex: none; }
+.key.med { background: var(--med); }
+.key.aud { background: var(--aud); }
+.key.sq { border-radius: 1px; }
+.key.dot { border-radius: 50%; }
+
+/* Try-it */
+.tryit { margin-top: clamp(40px, 5vw, 64px); border-left: 3px solid var(--accent); padding: 4px 0 4px 22px; max-width: 760px; }
+.tryit h4 { font-size: 20px; }
+.tryit p { color: var(--ink-2); margin-top: 6px; }
+.choices { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.choice {
+  font-family: var(--display); font-size: 15px; font-weight: 550; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 999px;
+  padding: 8px 15px; cursor: pointer; font-variant-numeric: tabular-nums;
+}
+.choice:hover { border-color: var(--accent); }
+.choice[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.verdict { margin-top: 16px; font-size: 18px; color: var(--ink); }
+.verdict strong { font-family: var(--display); font-weight: 650; }
+
+/* Figures: always light, like printed plates, in either site theme */
+.fig {
+  --surface: #FBFCFD; --ink: #15202C; --ink-2: #46556A; --ink-3: #66758A; --rule: #D2DAE3; --grid: #E2E8EE;
+  --accent: #2B5DA8; --accent-ink: #FFFFFF; --med: #2B5DA8; --aud: #B8661C; --band: #E6ECF2;
+  --z1: #D3DCE7; --z2: #E1E7EE; --z3: #F0F3F6; --chip: #E3E9F1; --shadow: rgba(15, 25, 40, 0.16);
+  color-scheme: light;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 6px; padding: clamp(16px, 2.6vw, 28px);
+}
+.fig-head { display: grid; gap: 4px; }
+.fig-head h4 { font-size: 19px; }
+.fig-tools { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; justify-content: space-between; margin-top: 14px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--display); font-size: 14px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.linkbtn { font-family: var(--display); font-size: 14px; font-weight: 600; color: var(--accent); background: none; border: 0; padding: 4px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.chart { position: relative; margin-top: 10px; width: 100%; }
+.chart svg { display: block; width: 100%; overflow: visible; }
+.chart text { font-family: var(--display); }
+.tip {
+  position: absolute; pointer-events: none; z-index: 5; min-width: 180px; max-width: 260px;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--rule); border-radius: 6px;
+  box-shadow: 0 6px 24px var(--shadow);
+  padding: 10px 12px; font-family: var(--display); font-size: 14px; line-height: 1.4;
+}
+.tip .t { font-weight: 650; margin-bottom: 4px; }
+.tip .r { display: flex; align-items: center; gap: 8px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.tip .r b { color: var(--ink); font-weight: 600; }
+.bf-key { margin: 16px 0 0; padding: 0; list-style: none; counter-reset: k; display: grid; gap: 10px; font-family: var(--display); font-size: 14px; color: var(--ink-2); line-height: 1.4; }
+.bf-key li { counter-increment: k; display: grid; grid-template-columns: 22px minmax(0, 1fr); column-gap: 8px; }
+.bf-key li::before { content: counter(k); grid-row: span 2; width: 20px; height: 20px; border-radius: 50%; background: var(--ink); color: var(--surface); font-size: 11px; font-weight: 700; display: grid; place-items: center; }
+.bf-key b { color: var(--ink); font-weight: 650; }
+.fig-note { font-size: 16px; color: var(--ink-2); margin-top: 14px; max-width: 70ch; }
+
+.tablewrap { overflow-x: auto; margin-top: 12px; }
+table { border-collapse: collapse; width: 100%; font-family: var(--display); font-size: 15px; line-height: 1.4; }
+th, td { text-align: left; vertical-align: top; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--rule); }
+th { font-weight: 600; color: var(--ink-3); font-size: 14px; }
+td { color: var(--ink-2); }
+td:first-child { color: var(--ink); font-weight: 550; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.widetable { min-width: 620px; }
+@media (max-width: 640px) {
+  .widetable { min-width: 0; }
+  .widetable thead { display: none; }
+  .widetable tr { display: grid; gap: 4px; padding-block: 14px; border-bottom: 1px solid var(--rule); }
+  .widetable td { display: block; border: 0; padding: 0; }
+  .widetable td:not(:first-child)::before { content: attr(data-label) ": "; color: var(--ink-3); font-weight: 600; }
+}
+
+/* Findings */
+.findings { display: grid; gap: 0; margin-top: 28px; }
+.finding { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; padding-block: 28px; border-top: 1px solid var(--rule); }
+.finding:last-child { border-bottom: 1px solid var(--rule); }
+.finding p { max-width: 64ch; color: var(--ink-2); }
+.finding-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; }
+.chip {
+  font-family: var(--display); font-size: 13px; font-weight: 600; color: var(--ink);
+  background: var(--chip); border-radius: 999px; padding: 3px 10px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.meter { display: inline-flex; gap: 2px; }
+.meter i { width: 6px; height: 10px; border-radius: 1px; background: var(--z2); }
+.meter i.on { background: var(--ink-2); }
+.split { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); align-items: start; }
+@media (max-width: 860px) { .split { grid-template-columns: minmax(0, 1fr); } }
+
+.method-box { display: grid; grid-template-columns: max-content 1fr; gap: 10px 24px; font-size: 17px; margin-top: 18px; }
+.method-box dt { font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--ink-3); padding-top: 2px; }
+.method-box dd { margin: 0; color: var(--ink-2); min-width: 0; }
+
+/* Projects */
+.work { display: grid; }
+.work article { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 8px 32px; padding-block: 30px; border-top: 1px solid var(--rule); }
+.work article:last-child { border-bottom: 1px solid var(--rule); }
+.work .yr { font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--ink-3); padding-top: 4px; font-variant-numeric: tabular-nums; }
+.work h3 { font-size: clamp(22px, 2.2vw, 26px); }
+.work .where { font-family: var(--display); font-size: 15px; color: var(--ink-3); margin-top: 6px; }
+.work p { color: var(--ink-2); margin-top: 12px; max-width: 64ch; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.tags span { font-family: var(--display); font-size: 13px; color: var(--ink-2); border: 1px solid var(--rule); border-radius: 3px; padding: 2px 8px; }
+@media (max-width: 640px) { .work article { grid-template-columns: minmax(0, 1fr); } }
+
+/* How I work */
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(32px, 5vw, 72px); }
+@media (max-width: 860px) { .cols { grid-template-columns: minmax(0, 1fr); } }
+.skills { display: grid; gap: 22px; margin-top: 20px; }
+.skills h4 { font-size: 17px; font-stretch: 100%; }
+.skills p { font-size: 17px; color: var(--ink-2); margin-top: 4px; }
+.practices { display: grid; gap: 26px; margin-top: 20px; }
+.practices h4 { font-size: 19px; }
+.practices p { color: var(--ink-2); margin-top: 6px; font-size: 18px; }
+
+/* Photography: a contact sheet */
+.sheet { background: var(--film); border-radius: 4px; padding: 26px clamp(10px, 2vw, 18px); overflow: hidden; }
+.strip { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; padding-block: 34px; }
+.strip + .strip { margin-top: 16px; }
+.strip::before, .strip::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 8px;
+  background-image: repeating-linear-gradient(90deg, var(--film-edge) 0 10px, transparent 10px 22px);
+}
+.strip::before { top: 4px; }
+.strip::after { bottom: 4px; }
+.frame { aspect-ratio: 3 / 2; max-width: 100%; border-radius: 2px; background: var(--film-edge); position: relative; display: block; }
+.frame img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 2px; }
+a.sheet { display: block; text-decoration: none; transition: filter .3s; }
+a.sheet:hover { filter: brightness(1.08); }
+.photo-cta { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.frame span { font-family: var(--display); font-size: 12px; font-weight: 600; color: var(--film-print); position: absolute; left: 4px; bottom: -19px; font-variant-numeric: tabular-nums; letter-spacing: 0.04em; }
+.frame em { font-family: var(--display); font-style: normal; font-size: 13px; color: var(--film-print); opacity: 0.75; }
+@media (max-width: 560px) { .sheet { overflow-x: auto; } .strip { grid-template-columns: repeat(4, 150px); width: max-content; } }
+
+/* About */
+.timeline { display: grid; margin-top: 8px; }
+.timeline div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 4px 24px; padding-block: 14px; border-top: 1px solid var(--rule); }
+.timeline div:last-child { border-bottom: 1px solid var(--rule); }
+.timeline .y { font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--ink-3); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.timeline .r { font-size: 18px; color: var(--ink); }
+.timeline .o { font-size: 16px; color: var(--ink-2); }
+@media (max-width: 520px) { .timeline div { grid-template-columns: minmax(0, 1fr); } }
+.creds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; margin-top: 40px; }
+@media (max-width: 720px) { .creds { grid-template-columns: minmax(0, 1fr); } }
+.creds h4 { font-size: 17px; font-stretch: 100%; }
+.creds ul { margin: 8px 0 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.creds li { font-size: 17px; color: var(--ink-2); }
+
+.contact { display: grid; gap: 14px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--rule); }
+.contact-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.email { font-family: var(--display); font-size: clamp(20px, 2.6vw, 28px); font-weight: 650; font-stretch: 95%; user-select: all; overflow-wrap: anywhere; }
+.copied { font-family: var(--display); font-size: 14px; color: var(--ink-2); }
+
+footer { border-top: 1px solid var(--rule); padding-block: 32px 48px; font-family: var(--display); font-size: 14px; color: var(--ink-3); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+
+@media (max-width: 560px) {
+  body { font-size: 18px; }
+  .facts { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .facts dd { margin-bottom: 12px; }
+  .method-box { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .method-box dd { margin-bottom: 10px; }
+  .design { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .design .corner { display: none; }
+  .design .rh { grid-column: 1 / -1; padding: 12px 0 2px; }
+  .design .hd { padding: 4px 2px; }
+}
+</style>
+<script>
+try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "light" || savedTheme === "dark") document.documentElement.setAttribute("data-theme", savedTheme); } catch (e) {}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">E.Y. Scher</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#work">Projects</a>
+      <a href="#methods">How I work</a>
+      <a href="photos.html">Photography</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="theme-btn" type="button" id="theme-btn" aria-label="Switch to light mode" title="Switch to light mode">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero-band">
+  <div class="wrap hero">
+    <h1>Eitan Y. Scher</h1>
+    <div class="dial-box" aria-hidden="true">
+      <canvas class="dial" id="dial" width="660" height="660"></canvas>
+      <p class="dial-note">This clock keeps real time. Its ticks bunch and stretch, the way remembered time does.</p>
+    </div>
+    <p class="lede">Psychology researcher and research ethics professional in Brooklyn. I study how meditation, awe and other altered states change the way we experience time and the self.</p>
+    <dl class="facts">
+      <dt>Now</dt>
+      <dd>IRB Associate II, Icahn School of Medicine at Mount Sinai</dd>
+      <dt>Before</dt>
+      <dd>Clinical research coordinator in anesthesiology at Columbia University Irving Medical Center, studying delirium and recovery of consciousness with EEG</dd>
+      <dt>Trained</dt>
+      <dd>B.A. in Psychology, cum laude, Rutgers University (honors thesis with David Wilder); study abroad at the Hebrew University of Jerusalem</dd>
+    </dl>
+    <div class="actions">
+      <a class="btn primary" href="#research">Read the reanalysis</a>
+      <a class="btn" href="Eitan-Scher-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      <a class="btn" href="photos.html">Photographs</a>
+    </div>
+  </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <section class="band" id="research" aria-labelledby="research-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="status"><b>Preliminary results.</b> Manuscript in preparation. Advisor: David Wilder, Rutgers University.</p>
+        <h2 class="compress" id="research-title"><span class="l1">Time flies when you’re having zen.</span><span class="sub"><span class="s1">Eight minutes of meditation,</span> <span class="l2">remembered as five or six.</span></span></h2>
+      </div>
+
+      <div class="stack measure">
+        <p>In 2019, 214 Rutgers undergraduates listened to an eight-minute recording: either a guided meditation or a passage of <i>The Hobbit</i> audiobook. Afterward, with no warning that the question was coming, they estimated how long it had lasted.</p>
+        <p>This year I reanalyzed the original data from the raw files in R, adding effect sizes, Bayes factors and a full set of robustness checks. The main result held up. Two of my original explanations did not.</p>
+      </div>
+
+      <div class="block">
+        <h3>The design</h3>
+        <p class="measure" style="margin-top:10px;color:var(--ink-2)">Each participant was randomly assigned to one of four groups. The recording varied, and so did where attention was pointed: at the self and body, or at a narrative.</p>
+        <div class="design" role="table" aria-label="Study design: four groups">
+          <div class="hd corner" role="columnheader"></div>
+          <div class="hd" role="columnheader">Self or body focus</div>
+          <div class="hd" role="columnheader">Narrative focus</div>
+
+          <div class="rh" role="rowheader"><i class="key med dot"></i>Meditation</div>
+          <div class="cell" role="cell"><div class="what">Guided meditation on the body and breath</div><div class="n">n = 59</div></div>
+          <div class="cell" role="cell"><div class="what">Guided waterfall visualization</div><div class="n">n = 54</div></div>
+
+          <div class="rh" role="rowheader"><i class="key aud sq"></i>Audiobook</div>
+          <div class="cell" role="cell"><div class="what"><i>The Hobbit</i>, seated at a mirror, asked to focus on themselves</div><div class="n">n = 60</div></div>
+          <div class="cell" role="cell"><div class="what"><i>The Hobbit</i>, asked to follow the story</div><div class="n">n = 41</div></div>
+        </div>
+      </div>
+
+      <div class="tryit" id="tryit">
+        <h4>Try the question yourself</h4>
+        <p>Without checking a clock: how long have you been on this page?</p>
+        <div class="choices" role="group" aria-label="Your estimate">
+          <button class="choice" type="button" id="try-0" data-lo="0" data-hi="60">Under 1 min</button>
+          <button class="choice" type="button" id="try-1" data-lo="60" data-hi="120">1–2 min</button>
+          <button class="choice" type="button" id="try-2" data-lo="120" data-hi="240">2–4 min</button>
+          <button class="choice" type="button" id="try-3" data-lo="240" data-hi="360">4–6 min</button>
+          <button class="choice" type="button" id="try-4" data-lo="360" data-hi="99999">Over 6 min</button>
+        </div>
+        <p class="verdict" id="verdict" aria-live="polite" hidden></p>
+      </div>
+
+      <div class="fig block" id="fig1">
+        <div class="fig-head">
+          <h4>How long did the eight minutes feel?</h4>
+          <p class="sub">Share of each group choosing each answer. The shaded column is the recording's true length.</p>
+        </div>
+        <div class="fig-tools">
+          <div class="legend">
+            <span><i class="key med"></i>Meditation (n = 113)</span>
+            <span><i class="key aud"></i>Audiobook (n = 101)</span>
+          </div>
+          <button class="linkbtn" type="button" id="fig1-toggle" aria-controls="fig1-table" aria-expanded="false">Show as table</button>
+        </div>
+        <div class="chart" id="chart-dist" role="img" aria-label="Grouped bar chart. 54 percent of meditators chose 5 to 6 minutes; the most common audiobook answer was the correct 7 to 8 minutes, at 38 percent."></div>
+        <div class="tablewrap" id="fig1-table" hidden>
+          <table>
+            <thead><tr><th>Answer (minutes)</th><th class="num">Meditation</th><th class="num">Audiobook</th></tr></thead>
+            <tbody id="fig1-tbody"></tbody>
+          </table>
+        </div>
+        <p class="fig-note">54% of meditators chose 5–6 minutes. 70% of audiobook listeners chose the correct 7–8 minutes or longer, compared with 37% of meditators. Cohen's <i>d</i> = −0.63, 95% CI [−0.91, −0.36].</p>
+      </div>
+
+      <div class="block">
+        <h3>What the reanalysis found</h3>
+        <p class="measure" style="margin-top:10px;color:var(--ink-2)">Each result is reported with how strongly the data support it. A Bayes factor compares how likely the data are with and without an effect, so it can show evidence for nothing being there, which a p-value cannot.</p>
+
+        <div class="fig" style="margin-top:28px" id="fig-bf">
+          <div class="fig-head">
+            <h4>How strong is the evidence for each result?</h4>
+            <p class="sub">Bayes factors on a log scale. Left of 1 favors no effect, right of 1 favors an effect. Between 1/3 and 3 the data can't decide.</p>
+          </div>
+          <div class="chart" id="chart-bf" role="img" aria-label="Evidence scale. Recording estimate: Bayes factor about 5,200 for an effect, strong. Shape trial: 2.4, inconclusive. Self-awareness link: 6.3 in favor of no link, moderate."></div>
+        </div>
+
+        <div class="findings">
+          <div class="finding">
+            <div class="finding-top">
+              <h4>Meditation made eight minutes feel shorter</h4>
+              <span class="chip"><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Strong evidence</span>
+            </div>
+            <p>Meditators' estimates centered on 5–6 minutes, and audiobook listeners' on the correct 7–8. The difference was medium to large (<i>d</i> = −0.63; <i>F</i>(1, 210) = 23.13, <i>p</i> &lt; .001), and the data are about 5,200 times more likely if the effect is real than if it isn't. It appeared under both kinds of focus. It looked larger with the narrative focus, but that difference wasn't reliable, so I don't interpret it.</p>
+          </div>
+          <div class="finding">
+            <div class="finding-top">
+              <h4>Self-awareness did not explain it</h4>
+              <span class="chip"><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>Moderate evidence of no link</span>
+            </div>
+            <p>The original hypothesis was that meditation raises self-awareness, and self-awareness stretches time. Body-focused meditation did raise state self-awareness a little. But self-awareness had no relationship with the duration estimates: <i>r</i> = .00, 95% CI [−.14, .13]. The Bayes factor favors no link by about 6 to 1. The mirror, meant to raise self-awareness without meditation, had no effect.</p>
+          </div>
+          <div class="finding split">
+            <div>
+              <div class="finding-top">
+                <h4>A smaller echo in seconds</h4>
+                <span class="chip"><span class="meter" aria-hidden="true"><i class="on"></i><i></i><i></i></span>Inconclusive</span>
+              </div>
+              <p style="margin-top:10px">Before and after the recording, participants timed four shapes shown on screen for 7, 17, 37 and 57 seconds. After meditating, their estimates fell further: to 80.7% of the true durations, compared with 87.4% after the audiobook, once each person's first estimates are taken into account (<i>p</i> = .016). The Bayes factor is 2.4, which can't decide either way, so the paper treats this result as secondary.</p>
+            </div>
+            <div class="fig" id="fig2">
+              <div class="fig-head">
+                <h4>Shape-timing estimates</h4>
+                <p class="sub">Raw averages as a share of true duration, with 95% CIs. The test in the text adjusts for the first trial.</p>
+              </div>
+              <div class="fig-tools">
+                <div class="legend">
+                  <span><i class="key med dot"></i>Meditation</span>
+                  <span><i class="key aud sq"></i>Audiobook</span>
+                </div>
+                <button class="linkbtn" type="button" id="fig2-toggle" aria-controls="fig2-table" aria-expanded="false">Show as table</button>
+              </div>
+              <div class="chart" id="chart-shape" role="img" aria-label="Line chart. Both groups started near 98 percent of true duration. After the recording, meditators fell to 80.8 percent and audiobook listeners to 87.5 percent."></div>
+              <div class="tablewrap" id="fig2-table" hidden>
+                <table>
+                  <thead><tr><th>Group</th><th class="num">Before</th><th class="num">After</th></tr></thead>
+                  <tbody>
+                    <tr><td>Meditation (n = 113)</td><td class="num">98.5% [91.7, 105.3]</td><td class="num">80.8% [76.1, 85.5]</td></tr>
+                    <tr><td>Audiobook (n = 101)</td><td class="num">98.2% [92.5, 103.9]</td><td class="num">87.5% [82.8, 92.1]</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Could something boring explain it?</h3>
+        <p class="measure" style="margin-top:10px;color:var(--ink-2)">Each check asks whether a mundane problem could have produced the main result. None did.</p>
+        <div class="tablewrap">
+          <table class="widetable">
+            <thead><tr><th>The worry</th><th>The check</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>The answers are categories, not real numbers</td><td>A rank-based test (Mann–Whitney)</td><td>Same result, <i>p</i> &lt; .001</td></tr>
+              <tr><td>Some people guessed the study was about time</td><td>Dropped the 24 to 29 who did</td><td>Still <i>p</i> &lt; .001</td></tr>
+              <tr><td>One participant may appear twice</td><td>Dropped the second record</td><td><i>F</i> = 24.22, against 23.13</td></tr>
+              <tr><td>Meditation groups reported more past meditation</td><td>Held prior experience constant</td><td><i>F</i> = 23.79, unchanged</td></tr>
+              <tr><td>Non-native English speakers were excluded</td><td>Added all 69 back (<i>N</i> = 283)</td><td><i>d</i> = −0.48, <i>p</i> &lt; .001</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>What changed since the 2019 thesis</h3>
+        <div class="tablewrap">
+          <table class="widetable">
+            <thead><tr><th>Issue</th><th>2019 thesis</th><th>2026 reanalysis</th></tr></thead>
+            <tbody>
+              <tr><td>Shape trial</td><td>Each person counted four times, once per shape, as if there were 856 participants</td><td>One score per person, adjusted for the first trial. Reported as weak evidence.</td></tr>
+              <tr><td>Why time flew</td><td>Meditators were absorbed in flow</td><td>Ruled out. The focus difference came from the mirror group's instructions, and focus didn't predict estimates (<i>r</i> = −.03).</td></tr>
+              <tr><td>Self-awareness</td><td>A non-significant correlation</td><td>A Bayes factor of about 6 in favor of no link</td></tr>
+              <tr><td>Statistics</td><td><i>p</i>-values from SPSS</td><td>Effect sizes with confidence intervals, Bayes factors, a permutation test and a mixed model</td></tr>
+              <tr><td>Data files</td><td>Not audited</td><td>Found two condition codes swapped in the full-sample file and documented it. Every analysis now uses the correct columns; the thesis results were unaffected.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="block measure">
+        <h3>How it was done</h3>
+        <dl class="method-box">
+          <dt>Software</dt><dd>R 4.6.1 with haven, nlme, BayesFactor and ggplot2</dd>
+          <dt>Reproducible</dt><dd>One script rebuilds every number and figure from the raw SPSS files. Each result line states the value it should produce, so any change that breaks a number shows up at once.</dd>
+          <dt>AI-assisted</dt><dd>The script and companion documents were drafted with AI and checked by me against the original output.</dd>
+          <dt>Open data</dt><dd>Data and code will be posted on OSF once the original consent and IRB terms are confirmed.</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="band" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="work-title">Other projects</h2>
+        <p>Clinical research, consciousness and the scholarship of spiritual experience.</p>
+      </div>
+      <div class="work">
+        <article>
+          <div class="yr">2019–2021</div>
+          <div>
+            <h3>Recovering consciousness after anesthesia</h3>
+            <p class="where">Department of Anesthesiology, Columbia University Irving Medical Center. PI: Paul S. García, M.D., Ph.D.</p>
+            <p>Coordinated studies of postoperative delirium and EEG biomarkers in cardiothoracic surgery patients. I consented patients, set up EEG monitoring in the operating room and prepared IRB protocols for research with cognitively impaired and delirious patients. I also contributed background material to a funded Beeson Emerging Leaders (K76) award.</p>
+            <div class="tags"><span>EEG</span><span>Delirium</span><span>Clinical research</span><span>IRB protocols</span></div>
+          </div>
+        </article>
+        <article>
+          <div class="yr">2020</div>
+          <div>
+            <h3>Language after surgery and the CAM-ICU</h3>
+            <p class="where">Presented at Academic Evening, Columbia University Irving Medical Center, April 2020</p>
+            <p>Scored five language measures (semantic and phonemic fluency, sentence repetition, naming and narrative production) and compared patients who did and didn't screen positive for delirium on the CAM-ICU. I used Mann–Whitney and Fisher's exact tests, stratified by site, to ask whether language problems persisted beyond documented delirium.</p>
+            <div class="tags"><span>Nonparametric statistics</span><span>Cognitive assessment</span></div>
+          </div>
+        </article>
+        <article>
+          <div class="yr">2022</div>
+          <div>
+            <h3>The Varieties of Spiritual Experience</h3>
+            <p class="where">Oxford University Press, 2022. Editorial reviewer, acknowledged in the front matter.</p>
+            <p>Reviewed draft chapters 9 through 14, on experiences of God, revelatory voices and visions, synchronicity, unity and loss of self, aesthetic experience and paranormal experience, with suggestions on argument and citations.</p>
+            <div class="tags"><span>Self-transcendent experience</span><span>Editing</span></div>
+          </div>
+        </article>
+        <article>
+          <div class="yr">2026</div>
+          <div>
+            <h3>This website</h3>
+            <p class="where">Designed and built with Claude</p>
+            <p>Hand-written HTML, CSS and JavaScript with no framework. The research charts are drawn in the browser from numbers computed directly from the study's data file, and each one can be read as a table.</p>
+            <div class="tags"><span>HTML and CSS</span><span>JavaScript</span><span>Data visualization</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section class="band" id="methods" aria-labelledby="methods-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="methods-title">How I work</h2>
+        <p>Careful methods, and AI used where it makes the work faster without making it less checkable.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h3>Methods and tools</h3>
+          <div class="skills">
+            <div><h4>Design</h4><p>Factorial between-subjects experiments, retrospective and prospective timing tasks, and Qualtrics surveys with randomization, branching and custom JavaScript.</p></div>
+            <div><h4>Analysis</h4><p>ANOVA and ANCOVA, mixed models, permutation tests, Bayes factors and nonparametric tests, reported with effect sizes and confidence intervals.</p></div>
+            <div><h4>Software</h4><p>R and RStudio, SPSS, Python with PsychoPy, Excel, EndNote and Zotero.</p></div>
+            <div><h4>Clinical and regulatory</h4><p>EEG setup in the operating room, consent of surgical patients, and IRB review under 45 CFR 46, the Common Rule and ICH-GCP.</p></div>
+          </div>
+        </div>
+        <div>
+          <h3>Working with AI</h3>
+          <div class="practices">
+            <div>
+              <h4>Code that checks itself</h4>
+              <p>The reanalysis script was written with AI assistance. Every result line carries the number it should produce, so rerunning it from the raw files confirms each statistic in the manuscript.</p>
+            </div>
+            <div>
+              <h4>Sources opened, not trusted</h4>
+              <p>AI literature summaries give me a starting list, and I open and check every source before citing it. Auditing my 2019 thesis this way turned up eight citation and terminology errors to fix before submission.</p>
+            </div>
+            <div>
+              <h4>Plain-language companions</h4>
+              <p>The results draft has a reading guide that explains every statistic in plain terms and anticipates reviewers' questions, so collaborators can check the reasoning as well as the numbers.</p>
+            </div>
+            <div>
+              <h4>Data hygiene</h4>
+              <p>Cross-checking the study's data files caught two condition codes swapped in one of them. I documented the problem in a README and rebuilt the analysis on the columns that were right in every file.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOGRAPHY -->
+  <section class="band" id="photography" aria-labelledby="photo-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="photo-title">EYS of the World</h2>
+        <p>Photographs, mostly on 35 mm film with a Pentax Super Program, and some digital on an Olympus OM-D E-M10 Mark III.</p>
+      </div>
+      <a class="sheet" href="photos.html" aria-label="Open EYS of the World, 36 photographs">
+        <div class="strip">
+          <div class="frame"><img src="img/s-special-sm.jpg" alt="S Special" loading="lazy" width="900" height="600"><span>1</span></div>
+          <div class="frame"><img src="img/broken-wall-sm.jpg" alt="Sunset through a broken wall" loading="lazy" width="900" height="600"><span>2</span></div>
+          <div class="frame"><img src="img/pigeon-sm.jpg" alt="Pigeon and shadow" loading="lazy" width="900" height="600"><span>3</span></div>
+          <div class="frame"><img src="img/van-sm.jpg" alt="Buena Playa" loading="lazy" width="900" height="600"><span>4</span></div>
+        </div>
+        <div class="strip">
+          <div class="frame"><img src="img/hibiscus-sm.jpg" alt="Hibiscus" loading="lazy" width="900" height="600"><span>5</span></div>
+          <div class="frame"><img src="img/ruin-sm.jpg" alt="Ruin at golden hour" loading="lazy" width="900" height="600"><span>6</span></div>
+          <div class="frame"><img src="img/bethesda-arcade-sm.jpg" alt="Bethesda Terrace arcade" loading="lazy" width="900" height="600"><span>7</span></div>
+          <div class="frame"><img src="img/lightning-sm.jpg" alt="Lightning over the sea, Cozumel" loading="lazy" width="900" height="600"><span>8</span></div>
+        </div>
+      </a>
+      <div class="photo-cta">
+        <a class="btn primary" href="photos.html">See all 36 photographs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="band" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="about-title">About</h2>
+      </div>
+      <div class="cols">
+        <div class="stack">
+          <p>I review human subjects research at the Icahn School of Medicine at Mount Sinai, about 150 submissions a month across behavioral and biomedical studies. Before that I spent two years in Columbia's Department of Anesthesiology, coordinating studies of postoperative delirium and recovery of consciousness.</p>
+          <p>My research interest is how morally and existentially significant experiences, from meditation to awe to psychedelic states, reshape cognition, identity and the sense of time. I hold a certificate in interdisciplinary psychedelic studies from Ohio State.</p>
+          <p>Outside work I shoot film, play guitar, snowboard and scuba dive.</p>
+        </div>
+        <div>
+          <h3>Experience</h3>
+          <div class="timeline">
+            <div><span class="y">2024–now</span><span><span class="r">IRB Associate II</span><br><span class="o">Icahn School of Medicine at Mount Sinai</span></span></div>
+            <div><span class="y">2022–2024</span><span><span class="r">Independent researcher and tutor</span><br><span class="o">Literature reviews and data cleaning; tutoring in psychology, English, history and Hebrew</span></span></div>
+            <div><span class="y">2021–2022</span><span><span class="r">Educational assistant</span><br><span class="o">The Academies at Gerrard Berman Day School</span></span></div>
+            <div><span class="y">2019–2021</span><span><span class="r">Clinical research coordinator</span><br><span class="o">Columbia University Irving Medical Center, Anesthesiology</span></span></div>
+            <div><span class="y">2018–2019</span><span><span class="r">Honors researcher and research assistant</span><br><span class="o">Rutgers University: Wilder Lab, DBT-RU, Social Cognition Lab, Cognitive Development Lab</span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="creds">
+        <div>
+          <h4>Education</h4>
+          <ul>
+            <li>B.A. in Psychology, cum laude, minor in Religion. Rutgers University, 2019</li>
+            <li>Non-degree student, Rothberg International School, Hebrew University of Jerusalem, 2016–2017</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Certifications</h4>
+          <ul>
+            <li>Certificate in Interdisciplinary Psychedelic Studies, The Ohio State University</li>
+            <li>CITI training in human subjects protection, good clinical practice and responsible conduct of research</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Honors</h4>
+          <ul>
+            <li>Aresty Undergraduate Research Fellowship, Rutgers</li>
+            <li>Honors Research Scholar in Psychology, Rutgers</li>
+            <li>Paul Robeson Scholar, Rutgers</li>
+            <li>Psi Chi</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Presentations</h4>
+          <ul>
+            <li>Post-operative speech and language assessment compared to the CAM-ICU model of delirium. CUIMC Academic Evening, 2020</li>
+            <li>Exploring the effects of meditation and self-awareness on temporal judgements. Aresty Research Symposium, Rutgers, 2019</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contact">
+        <h3>Get in touch</h3>
+        <div class="contact-row">
+          <span class="email" id="email">eitanyscher@gmail.com</span>
+          <button class="btn" type="button" id="copy-email">Copy email</button>
+          <span class="copied" id="copied" aria-live="polite"></span>
+        </div>
+        <div class="contact-row" style="font-family:var(--display);font-size:16px">
+          <a href="https://orcid.org/0000-0002-0945-6587" target="_blank" rel="noopener">ORCID 0000-0002-0945-6587</a>
+          <a href="https://www.researchgate.net/profile/Eitan_Scher" target="_blank" rel="noopener">ResearchGate</a>
+          <a href="Eitan-Scher-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Eitan Y. Scher</span>
+    <span>Designed and built with Claude</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var BINS = ["1–2", "3–4", "5–6", "7–8", "9–10", "11–12", "13–14"];
+  var DIST = {
+    med: { label: "Meditation", pct: [0, 8.8, 54.0, 23.9, 9.7, 2.7, 0.9], n: [0, 10, 61, 27, 11, 3, 1], N: 113 },
+    aud: { label: "Audiobook", pct: [0, 4.0, 25.7, 37.6, 24.8, 6.9, 1.0], n: [0, 4, 26, 38, 25, 7, 1], N: 101 }
+  };
+  var SHAPE = {
+    med: { label: "Meditation", n: 113, before: [98.5, 91.7, 105.3], after: [80.8, 76.1, 85.5] },
+    aud: { label: "Audiobook", n: 101, before: [98.2, 92.5, 103.9], after: [87.5, 82.8, 92.1] }
+  };
+
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function txt(parent, x, y, s, attrs) {
+    var a = { x: x, y: y, fill: "var(--ink-2)", "font-size": 12 };
+    for (var k in attrs) a[k] = attrs[k];
+    var t = el("text", a, parent);
+    t.textContent = s;
+    return t;
+  }
+  function fmt(v) { return v.toFixed(1).replace(".0", ".0"); }
+
+  // Tooltip helper
+  function makeTip(host) {
+    var tip = document.createElement("div");
+    tip.className = "tip"; tip.hidden = true;
+    host.appendChild(tip);
+    return {
+      show: function (html, x, y) {
+        tip.innerHTML = html; tip.hidden = false;
+        var w = host.clientWidth, tw = tip.offsetWidth, th = tip.offsetHeight;
+        var left = x + 14; if (left + tw > w) left = x - tw - 14; if (left < 0) left = Math.max(0, Math.min(w - tw, x - tw / 2));
+        var top = y - th - 12; if (top < 0) top = y + 14;
+        tip.style.left = left + "px"; tip.style.top = top + "px";
+      },
+      hide: function () { tip.hidden = true; }
+    };
+  }
+  function row(cls, name, val) {
+    return '<div class="r"><i class="key ' + cls + '"></i>' + name + ': <b>' + val + '</b></div>';
+  }
+
+  // Rounded-top bar from a baseline
+  function barPath(x, yTop, w, yBase) {
+    var h = yBase - yTop; if (h < 0.5) return null;
+    var r = Math.min(4, h, w / 2);
+    return "M" + x + "," + yBase + "V" + (yTop + r) + "Q" + x + "," + yTop + " " + (x + r) + "," + yTop +
+      "H" + (x + w - r) + "Q" + (x + w) + "," + yTop + " " + (x + w) + "," + (yTop + r) + "V" + yBase + "Z";
+  }
+
+  // FIGURE 1: distribution of retrospective estimates
+  function drawDist() {
+    var host = document.getElementById("chart-dist");
+    host.innerHTML = "";
+    var W = host.clientWidth; if (!W) return;
+    var narrow = W < 520;
+    var H = narrow ? 280 : 330;
+    var m = { l: 40, r: 6, t: 30, b: 52 };
+    var iw = W - m.l - m.r, ih = H - m.t - m.b;
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, height: H, "aria-hidden": "true" }, host);
+    var y = function (v) { return m.t + ih - (v / 60) * ih; };
+    var band = iw / 7;
+    var bw = Math.max(6, Math.min(24, (band * 0.72 - 2) / 2));
+
+    // True-length band
+    el("rect", { x: m.l + band * 3, y: m.t, width: band, height: ih, fill: "var(--band)" }, svg);
+    txt(svg, m.l + band * 3.5, m.t - 10, narrow ? "True length" : "True length", { "text-anchor": "middle", "font-weight": 600 });
+
+    [0, 20, 40, 60].forEach(function (t) {
+      el("line", { x1: m.l, x2: W - m.r, y1: y(t), y2: y(t), stroke: t === 0 ? "var(--ink-3)" : "var(--grid)", "stroke-width": 1, "shape-rendering": "crispEdges" }, svg);
+      txt(svg, m.l - 8, y(t) + 4, t + "%", { "text-anchor": "end", fill: "var(--ink-3)", "font-variant-numeric": "tabular-nums" });
+    });
+
+    var groups = [];
+    BINS.forEach(function (b, i) {
+      var cx = m.l + band * (i + 0.5);
+      var g = el("g", {}, svg);
+      var pm = barPath(cx - 1 - bw, y(DIST.med.pct[i]), bw, y(0));
+      var pa = barPath(cx + 1, y(DIST.aud.pct[i]), bw, y(0));
+      if (pm) el("path", { d: pm, fill: "var(--med)" }, g);
+      if (pa) el("path", { d: pa, fill: "var(--aud)" }, g);
+      groups.push(g);
+      txt(svg, cx, H - m.b + 20, b, { "text-anchor": "middle", fill: "var(--ink-2)", "font-size": narrow ? 11 : 12 });
+    });
+    // Selective direct labels: the two modes
+    txt(svg, m.l + band * 2.5 - 1 - bw / 2, y(54.0) - 7, "54%", { "text-anchor": "middle", "font-weight": 650, fill: "var(--ink)" });
+    txt(svg, m.l + band * 3.5 + 1 + bw / 2, y(37.6) - 7, "38%", { "text-anchor": "middle", "font-weight": 650, fill: "var(--ink)" });
+    txt(svg, m.l + iw / 2, H - 8, "Estimated length of the recording (minutes)", { "text-anchor": "middle", fill: "var(--ink-3)", "font-size": 12 });
+
+    // Hit targets per bin
+    var tip = makeTip(host);
+    BINS.forEach(function (b, i) {
+      var hit = el("rect", { x: m.l + band * i, y: m.t, width: band, height: ih, fill: "transparent", tabindex: 0,
+        "aria-label": b + " minutes: meditation " + DIST.med.pct[i] + " percent, audiobook " + DIST.aud.pct[i] + " percent" }, svg);
+      hit.style.cursor = "default"; hit.style.outline = "none";
+      function on(px, py) {
+        groups.forEach(function (g, j) { g.setAttribute("opacity", j === i ? 1 : 0.35); });
+        tip.show('<div class="t">' + b + ' minutes' + (i === 3 ? ' (true length)' : '') + '</div>' +
+          row("med", "Meditation", DIST.med.pct[i].toFixed(1) + "% (" + DIST.med.n[i] + " of " + DIST.med.N + ")") +
+          row("aud", "Audiobook", DIST.aud.pct[i].toFixed(1) + "% (" + DIST.aud.n[i] + " of " + DIST.aud.N + ")"), px, py);
+      }
+      function off() { groups.forEach(function (g) { g.setAttribute("opacity", 1); }); tip.hide(); }
+      hit.addEventListener("pointermove", function (e) { var r = host.getBoundingClientRect(); on(e.clientX - r.left, e.clientY - r.top); });
+      hit.addEventListener("pointerleave", off);
+      hit.addEventListener("focus", function () { on(m.l + band * (i + 0.5), y(Math.max(DIST.med.pct[i], DIST.aud.pct[i]))); });
+      hit.addEventListener("blur", off);
+    });
+  }
+
+  // FIGURE 2: shape trial before/after
+  function drawShape() {
+    var host = document.getElementById("chart-shape");
+    host.innerHTML = "";
+    var W = host.clientWidth; if (!W) return;
+    var H = 260;
+    var m = { l: 46, r: 52, t: 14, b: 34 };
+    var iw = W - m.l - m.r, ih = H - m.t - m.b;
+    var lo = 70, hi = 110;
+    var y = function (v) { return m.t + ih - ((v - lo) / (hi - lo)) * ih; };
+    var xs = [m.l + iw * 0.22, m.l + iw * 0.78];
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, height: H, "aria-hidden": "true" }, host);
+    [70, 80, 90, 100, 110].forEach(function (t) {
+      el("line", { x1: m.l, x2: W - m.r, y1: y(t), y2: y(t), stroke: t === 100 ? "var(--ink-3)" : "var(--grid)", "stroke-width": 1, "shape-rendering": "crispEdges" }, svg);
+      txt(svg, m.l - 8, y(t) + 4, t + "%", { "text-anchor": "end", fill: "var(--ink-3)" });
+    });
+    txt(svg, W - m.r, y(100) - 6, "Accurate", { "text-anchor": "end", fill: "var(--ink-3)", "font-size": 11 });
+    txt(svg, xs[0], H - 10, "Before the recording", { "text-anchor": "middle" });
+    txt(svg, xs[1], H - 10, "After", { "text-anchor": "middle" });
+
+    var tip = makeTip(host);
+    var keys = [["med", -7, "var(--med)"], ["aud", 7, "var(--aud)"]];
+    keys.forEach(function (k) {
+      var s = SHAPE[k[0]], dx = k[1], col = k[2];
+      var pts = [[xs[0] + dx, s.before], [xs[1] + dx, s.after]];
+      el("line", { x1: pts[0][0], y1: y(pts[0][1][0]), x2: pts[1][0], y2: y(pts[1][1][0]), stroke: col, "stroke-width": 2, "stroke-linecap": "round" }, svg);
+      pts.forEach(function (p) {
+        el("line", { x1: p[0], x2: p[0], y1: y(p[1][1]), y2: y(p[1][2]), stroke: col, "stroke-width": 1.5 }, svg);
+        el("line", { x1: p[0] - 4, x2: p[0] + 4, y1: y(p[1][1]), y2: y(p[1][1]), stroke: col, "stroke-width": 1.5 }, svg);
+        el("line", { x1: p[0] - 4, x2: p[0] + 4, y1: y(p[1][2]), y2: y(p[1][2]), stroke: col, "stroke-width": 1.5 }, svg);
+        if (k[0] === "med") el("circle", { cx: p[0], cy: y(p[1][0]), r: 5, fill: col, stroke: "var(--surface)", "stroke-width": 2 }, svg);
+        else el("rect", { x: p[0] - 5, y: y(p[1][0]) - 5, width: 10, height: 10, fill: col, stroke: "var(--surface)", "stroke-width": 2 }, svg);
+      });
+      txt(svg, xs[1] + dx + (dx < 0 ? -12 : 12), y(s.after[0]) + 4, s.after[0].toFixed(1) + "%",
+        { "text-anchor": dx < 0 ? "end" : "start", "font-weight": 650, fill: "var(--ink)" });
+      pts.forEach(function (p, j) {
+        var hit = el("circle", { cx: p[0], cy: y(p[1][0]), r: 16, fill: "transparent", tabindex: 0,
+          "aria-label": s.label + (j ? " after" : " before") + ": " + p[1][0] + " percent of true duration" }, svg);
+        hit.style.outline = "none";
+        function on(px, py) {
+          tip.show('<div class="t">' + s.label + ', ' + (j ? 'after' : 'before') + '</div>' +
+            '<div class="r">Estimate: <b>' + p[1][0].toFixed(1) + '% of true duration</b></div>' +
+            '<div class="r">95% CI ' + p[1][1].toFixed(1) + '–' + p[1][2].toFixed(1) + ', n = ' + s.n + '</div>', px, py);
+        }
+        hit.addEventListener("pointermove", function (e) { var r = host.getBoundingClientRect(); on(e.clientX - r.left, e.clientY - r.top); });
+        hit.addEventListener("pointerleave", function () { tip.hide(); });
+        hit.addEventListener("focus", function () { on(p[0], y(p[1][0])); });
+        hit.addEventListener("blur", function () { tip.hide(); });
+      });
+    });
+  }
+
+  // Evidence scale (Bayes factors, log10)
+  function drawBF() {
+    var host = document.getElementById("chart-bf");
+    host.innerHTML = "";
+    var W = host.clientWidth; if (!W) return;
+    var lo = -1.6, hi = 4.25;
+    var m = { l: 4, r: 4 };
+    var iw = W - m.l - m.r;
+    var wide = iw >= 900;
+    var x = function (v) { return m.l + ((v - lo) / (hi - lo)) * iw; };
+    var stripTop = 28, stripH = 46, dotY = stripTop + 31, tickY = stripTop + stripH + 18;
+    var pts = [
+      { v: Math.log10(1 / 6.28), name: "Self-awareness and duration", stat: "6.3 to 1 for no link" },
+      { v: Math.log10(2.42), name: "Shape trial (seconds)", stat: "2.4 to 1 for an effect" },
+      { v: Math.log10(5200), name: "Recording estimate (minutes)", stat: "About 5,200 to 1 for an effect" }
+    ];
+    var labelTop = tickY + 32, rowH = wide ? 44 : 30;
+    var H = wide ? labelTop + 2 * rowH : tickY + 10;
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, height: H }, host);
+    if (!wide) {
+      var ol = document.createElement("ol"); ol.className = "bf-key";
+      pts.forEach(function (p) {
+        var li = document.createElement("li");
+        var b = document.createElement("b"); b.textContent = p.name;
+        li.appendChild(b); li.appendChild(document.createTextNode(" " + p.stat));
+        ol.appendChild(li);
+      });
+      host.appendChild(ol);
+    }
+    var zones = [[lo, -1, "var(--z1)", "Strong"], [-1, -0.477, "var(--z2)", "Moderate"], [-0.477, 0.477, "var(--z3)", "Inconclusive"], [0.477, 1, "var(--z2)", "Moderate"], [1, hi, "var(--z1)", "Strong"]];
+    zones.forEach(function (z) {
+      var x0 = x(z[0]), x1 = x(z[1]);
+      el("rect", { x: x0, y: stripTop, width: x1 - x0, height: stripH, fill: z[2] }, svg);
+      var need = z[3].length * 6.2 + 10;
+      if (x1 - x0 > need) txt(svg, (x0 + x1) / 2, stripTop + 15, z[3], { "text-anchor": "middle", fill: "var(--ink-2)", "font-size": 11 });
+    });
+    el("line", { x1: x(0), x2: x(0), y1: stripTop + 21, y2: stripTop + stripH + 4, stroke: "var(--ink-3)", "stroke-width": 1 }, svg);
+    txt(svg, m.l, 14, "Evidence for no effect", { "font-weight": 600, fill: "var(--ink-2)" });
+    txt(svg, W - m.r, 14, "Evidence for an effect", { "text-anchor": "end", "font-weight": 600, fill: "var(--ink-2)" });
+    var ticks = [[-1, "1/10"], [-0.477, "1/3"], [0, "1"], [0.477, "3"], [1, "10"], [2, "100"], [3, "1,000"], [4, "10,000"]];
+    ticks.forEach(function (t) {
+      var tx = x(t[0]);
+      el("line", { x1: tx, x2: tx, y1: stripTop + stripH, y2: stripTop + stripH + 5, stroke: "var(--ink-3)", "stroke-width": 1 }, svg);
+      var anchor = tx > W - 26 ? "end" : (tx < 20 ? "start" : "middle");
+      txt(svg, anchor === "end" ? W - m.r : tx, tickY, t[1], { "text-anchor": anchor, fill: "var(--ink-3)", "font-size": 11, "font-variant-numeric": "tabular-nums" });
+    });
+    pts.forEach(function (p, i) {
+      var px = x(p.v);
+      if (wide) {
+        var ly = labelTop + (i === 1 ? rowH : 0);
+        el("line", { x1: px, x2: px, y1: dotY, y2: ly - 13, stroke: "var(--ink-3)", "stroke-width": 1 }, svg);
+        el("circle", { cx: px, cy: dotY, r: 6, fill: "var(--ink)", stroke: "var(--surface)", "stroke-width": 2 }, svg);
+        var frac = (px - m.l) / iw;
+        var anchor = frac < 0.3 ? "start" : (frac > 0.7 ? "end" : "middle");
+        var ax = anchor === "start" ? Math.max(m.l, px - 6) : (anchor === "end" ? Math.min(W - m.r, px + 6) : px);
+        txt(svg, ax, ly + 2, p.name, { "text-anchor": anchor, "font-weight": 650, fill: "var(--ink)", "font-size": 13 });
+        txt(svg, ax, ly + 19, p.stat, { "text-anchor": anchor, fill: "var(--ink-2)", "font-size": 12 });
+      } else {
+        el("circle", { cx: px, cy: dotY, r: 9, fill: "var(--ink)", stroke: "var(--surface)", "stroke-width": 2 }, svg);
+        txt(svg, px, dotY + 4, String(i + 1), { "text-anchor": "middle", fill: "var(--surface)", "font-size": 11, "font-weight": 700 });
+      }
+    });
+  }
+
+  // Table view for figure 1
+  var tb = document.getElementById("fig1-tbody");
+  BINS.forEach(function (b, i) {
+    var tr = document.createElement("tr");
+    tr.innerHTML = "<td>" + b + (i === 3 ? " (true length)" : "") + "</td><td class=\"num\">" + DIST.med.pct[i].toFixed(1) + "% (" + DIST.med.n[i] + ")</td><td class=\"num\">" + DIST.aud.pct[i].toFixed(1) + "% (" + DIST.aud.n[i] + ")</td>";
+    tb.appendChild(tr);
+  });
+  function toggler(btnId, tableId, chartId) {
+    var btn = document.getElementById(btnId), tbl = document.getElementById(tableId), ch = document.getElementById(chartId);
+    btn.addEventListener("click", function () {
+      var showTable = tbl.hidden;
+      tbl.hidden = !showTable; ch.hidden = showTable;
+      btn.setAttribute("aria-expanded", String(showTable));
+      btn.textContent = showTable ? "Show as chart" : "Show as table";
+      if (!showTable) drawAll();
+    });
+  }
+  toggler("fig1-toggle", "fig1-table", "chart-dist");
+  toggler("fig2-toggle", "fig2-table", "chart-shape");
+
+  Array.prototype.forEach.call(document.querySelectorAll(".widetable"), function (t) {
+    var heads = Array.prototype.map.call(t.querySelectorAll("thead th"), function (th) { return th.textContent; });
+    Array.prototype.forEach.call(t.querySelectorAll("tbody tr"), function (tr) {
+      Array.prototype.forEach.call(tr.children, function (td, i) { td.setAttribute("data-label", heads[i] || ""); });
+    });
+  });
+
+  function drawAll() { drawDist(); drawShape(); drawBF(); }
+  drawAll();
+  if (window.ResizeObserver) {
+    var last = 0, rt = null;
+    new ResizeObserver(function () {
+      var w = document.documentElement.clientWidth;
+      if (w === last) return; last = w;
+      clearTimeout(rt); rt = setTimeout(drawAll, 60);
+    }).observe(document.body);
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawAll);
+
+  // Headline: compress line two when it comes into view
+  var head = document.querySelector(".compress");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (head && "IntersectionObserver" in window && !reduce) {
+    var rect = head.getBoundingClientRect();
+    if (rect.top > window.innerHeight * 0.85) {
+      head.classList.add("pre");
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { setTimeout(function () { head.classList.remove("pre"); }, 250); io.disconnect(); }
+        });
+      }, { threshold: 0.6 });
+      io.observe(head);
+    }
+  }
+
+  // Try it: a retrospective estimate of time on page
+  var start = Date.now() - (window.performance && performance.now ? performance.now() : 0);
+  var verdict = document.getElementById("verdict");
+  var choices = Array.prototype.slice.call(document.querySelectorAll(".choice"));
+  choices.forEach(function (c) {
+    c.setAttribute("aria-pressed", "false");
+    c.addEventListener("click", function () {
+      var secs = Math.round((Date.now() - start) / 1000);
+      var lo = +c.dataset.lo, hi = +c.dataset.hi;
+      choices.forEach(function (o) { o.setAttribute("aria-pressed", String(o === c)); });
+      var mm = Math.floor(secs / 60), ss = secs % 60;
+      var t = (mm ? mm + " min " : "") + ss + " s";
+      var call = secs < lo ? "You guessed long." : (secs >= hi ? "You guessed short." : "Right on.");
+      verdict.innerHTML = "<strong>" + call + "</strong> You've been here " + t + ". In the study, most meditators guessed short, and audiobook listeners were close to right.";
+      verdict.hidden = false;
+    });
+  });
+
+  // Hero clock: 120 ticks whose spacing slowly bunches and stretches; the hand keeps real seconds
+  (function () {
+    var cv = document.getElementById("dial"); if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext("2d");
+    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var visible = true, last = 0, t0 = performance.now();
+    function css(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+    function size() {
+      var w = cv.clientWidth || 300, d = Math.min(window.devicePixelRatio || 1, 2);
+      if (cv.width !== Math.round(w * d)) { cv.width = Math.round(w * d); cv.height = Math.round(w * d); }
+      return { w: w, d: d };
+    }
+    function draw(now) {
+      var z = size(), w = z.w, c = w / 2, R = w / 2 - 6;
+      ctx.setTransform(z.d, 0, 0, z.d, 0, 0); ctx.clearRect(0, 0, w, w);
+      var t = (now - t0) / 1000;
+      var a = still ? 0.2 : 0.2 + 0.11 * Math.sin(t / 4.5);   // how strongly time bunches
+      var phi = still ? 0.6 : t / 26;                           // where it bunches, drifting slowly
+      var ink2 = css("--ink-2"), ink3 = css("--ink-3"), amber = css("--amber"), rule = css("--rule");
+      ctx.lineCap = "round";
+      ctx.beginPath(); ctx.arc(c, c, R, 0, Math.PI * 2); ctx.strokeStyle = rule; ctx.lineWidth = 1; ctx.stroke();
+      for (var i = 0; i < 120; i++) {
+        var u = i / 120, th = 2 * Math.PI * u + a * Math.sin(2 * Math.PI * u - phi);
+        var major = i % 10 === 0, len = major ? w * 0.055 : w * 0.025;
+        var sx = Math.sin(th), sy = -Math.cos(th);
+        ctx.beginPath();
+        ctx.moveTo(c + sx * (R - 6), c + sy * (R - 6));
+        ctx.lineTo(c + sx * (R - 6 - len), c + sy * (R - 6 - len));
+        ctx.strokeStyle = major ? ink2 : ink3; ctx.globalAlpha = major ? 0.95 : 0.55;
+        ctx.lineWidth = major ? 2 : 1.2; ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+      var secs = (Date.now() / 1000) % 60, ang = 2 * Math.PI * secs / 60;
+      var hx = Math.sin(ang), hy = -Math.cos(ang);
+      ctx.beginPath(); ctx.moveTo(c - hx * w * 0.06, c - hy * w * 0.06); ctx.lineTo(c + hx * (R - w * 0.1), c + hy * (R - w * 0.1));
+      ctx.strokeStyle = amber; ctx.lineWidth = 2; ctx.stroke();
+      ctx.beginPath(); ctx.arc(c, c, 4, 0, Math.PI * 2); ctx.fillStyle = amber; ctx.fill();
+    }
+    function loop(now) {
+      if (visible && !document.hidden && now - last > 33) { draw(now); last = now; }
+      requestAnimationFrame(loop);
+    }
+    draw(performance.now());
+    if (still) { setInterval(function () { draw(performance.now()); }, 1000); return; }
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(cv);
+    requestAnimationFrame(loop);
+  })();
+
+  // Theme switch: dark by default, light on request; remembered per visitor
+  var themeBtn = document.getElementById("theme-btn");
+  function syncThemeBtn() {
+    var light = document.documentElement.getAttribute("data-theme") === "light";
+    var label = light ? "Switch to dark mode" : "Switch to light mode";
+    themeBtn.setAttribute("aria-label", label); themeBtn.title = label;
+  }
+  syncThemeBtn();
+  themeBtn.addEventListener("click", function () {
+    var next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("eys-theme", next); } catch (e) {}
+    syncThemeBtn();
+  });
+
+  // Copy email
+  var copyBtn = document.getElementById("copy-email"), copied = document.getElementById("copied");
+  copyBtn.addEventListener("click", function () {
+    var addr = document.getElementById("email").textContent;
+    function selectIt() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById("email"));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      copied.textContent = "Selected. Press Cmd+C or Ctrl+C to copy.";
+    }
+    try {
+      navigator.clipboard.writeText(addr).then(function () { copied.textContent = "Copied"; }, selectIt);
+    } catch (e) { selectIt(); }
+  });
+})();
+</script>
+</body>
+</html>
