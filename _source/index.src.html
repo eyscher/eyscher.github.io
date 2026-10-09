@@ -412,19 +412,6 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
         </div>
       </div>
 
-      <div class="tryit" id="tryit">
-        <h4>Try the question yourself</h4>
-        <p>Without checking a clock: how long have you been on this page?</p>
-        <div class="choices" role="group" aria-label="Your estimate">
-          <button class="choice" type="button" id="try-0" data-lo="0" data-hi="60">Under 1 min</button>
-          <button class="choice" type="button" id="try-1" data-lo="60" data-hi="120">1–2 min</button>
-          <button class="choice" type="button" id="try-2" data-lo="120" data-hi="240">2–4 min</button>
-          <button class="choice" type="button" id="try-3" data-lo="240" data-hi="360">4–6 min</button>
-          <button class="choice" type="button" id="try-4" data-lo="360" data-hi="99999">Over 6 min</button>
-        </div>
-        <p class="verdict" id="verdict" aria-live="polite" hidden></p>
-      </div>
-
       <div class="fig block" id="fig1">
         <div class="fig-head">
           <h4>How long did the eight minutes feel?</h4>
@@ -550,6 +537,19 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
           <dt>AI-assisted</dt><dd>The script and companion documents were drafted with Claude (Anthropic) and checked by me against the original output.</dd>
           <dt>Open data</dt><dd>Data and code will be posted on OSF once the original consent and IRB terms are confirmed.</dd>
         </dl>
+      </div>
+
+      <div class="tryit" id="tryit">
+        <h4>Now, a question for you</h4>
+        <p>You’ve been reading for a while. Without checking a clock, how long do you think you’ve been on this page?</p>
+        <div class="choices" role="group" aria-label="Your estimate">
+          <button class="choice" type="button" id="try-0" data-lo="0" data-hi="120">Under 2 min</button>
+          <button class="choice" type="button" id="try-1" data-lo="120" data-hi="240">2–4 min</button>
+          <button class="choice" type="button" id="try-2" data-lo="240" data-hi="360">4–6 min</button>
+          <button class="choice" type="button" id="try-3" data-lo="360" data-hi="600">6–10 min</button>
+          <button class="choice" type="button" id="try-4" data-lo="600" data-hi="99999">Over 10 min</button>
+        </div>
+        <p class="verdict" id="verdict" aria-live="polite" hidden></p>
       </div>
     </div>
   </section>
