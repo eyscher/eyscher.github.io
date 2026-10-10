@@ -946,7 +946,7 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
       choices.forEach(function (o) { o.setAttribute("aria-pressed", String(o === c)); });
       var mm = Math.floor(secs / 60), ss = secs % 60;
       var t = (mm ? mm + " min " : "") + ss + " s";
-      var call = secs < lo ? "You guessed long." : (secs >= hi ? "You guessed short." : "Right on.");
+      var call = secs < lo ? "Time dragged." : (secs >= hi ? "Time flew." : "Right on.");
       verdict.innerHTML = "<strong>" + call + "</strong> You've been here " + t + ". In the study, most meditators guessed short, and audiobook listeners were close to right.";
       verdict.hidden = false;
     });
