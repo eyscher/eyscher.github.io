@@ -217,6 +217,9 @@ h4 { font-size: 21px; font-weight: 650; font-stretch: 95%; line-height: 1.2; }
 .bf-key li { counter-increment: k; display: grid; grid-template-columns: 22px minmax(0, 1fr); column-gap: 8px; }
 .bf-key li::before { content: counter(k); grid-row: span 2; width: 20px; height: 20px; border-radius: 50%; background: var(--ink); color: var(--surface); font-size: 11px; font-weight: 700; display: grid; place-items: center; }
 .bf-key b { color: var(--ink); font-weight: 650; }
+.bf-zones { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 12px; font-family: var(--display); font-size: 13px; color: var(--ink-2); line-height: 1.4; }
+.bf-zones span { display: inline-flex; align-items: center; gap: 7px; }
+.bf-zones i { width: 16px; height: 11px; border: 1px solid var(--rule); border-radius: 2px; flex: none; }
 .fig-note { font-size: 16px; color: var(--ink-2); margin-top: 14px; max-width: 70ch; }
 
 .tablewrap { overflow-x: auto; margin-top: 12px; }
@@ -935,12 +938,21 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
       host.appendChild(ol);
     }
     var zones = [[lo, -1, "var(--z1)", "Strong"], [-1, -0.477, "var(--z2)", "Moderate"], [-0.477, 0.477, "var(--z3)", "Inconclusive"], [0.477, 1, "var(--z2)", "Moderate"], [1, hi, "var(--z1)", "Strong"]];
+    var allFit = zones.every(function (z) { return x(z[1]) - x(z[0]) > z[3].length * 6.2 + 10; });
     zones.forEach(function (z) {
       var x0 = x(z[0]), x1 = x(z[1]);
       el("rect", { x: x0, y: stripTop, width: x1 - x0, height: stripH, fill: z[2] }, svg);
-      var need = z[3].length * 6.2 + 10;
-      if (x1 - x0 > need) txt(svg, (x0 + x1) / 2, stripTop + 15, z[3], { "text-anchor": "middle", fill: "var(--ink-2)", "font-size": 11 });
+      if (allFit) txt(svg, (x0 + x1) / 2, stripTop + 15, z[3], { "text-anchor": "middle", fill: "var(--ink-2)", "font-size": 11 });
     });
+    if (!allFit) {
+      // Narrow screens: name the shaded zones in a legend instead of inside the strip
+      var zl = document.createElement("div"); zl.className = "bf-zones";
+      [["var(--z3)", "Inconclusive (1/3 to 3)"], ["var(--z2)", "Moderate (3 to 10, or 1/10 to 1/3)"], ["var(--z1)", "Strong (above 10, or below 1/10)"]].forEach(function (k) {
+        var sp = document.createElement("span"), sw = document.createElement("i");
+        sw.style.background = k[0]; sp.appendChild(sw); sp.appendChild(document.createTextNode(k[1])); zl.appendChild(sp);
+      });
+      host.insertBefore(zl, svg.nextSibling);
+    }
     el("line", { x1: x(0), x2: x(0), y1: stripTop + 21, y2: stripTop + stripH + 4, stroke: "var(--ink-3)", "stroke-width": 1 }, svg);
     txt(svg, m.l, 14, "Evidence for no effect", { "font-weight": 600, fill: "var(--ink-2)" });
     txt(svg, W - m.r, 14, "Evidence for an effect", { "text-anchor": "end", "font-weight": 600, fill: "var(--ink-2)" });
