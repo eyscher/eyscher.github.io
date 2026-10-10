@@ -40,7 +40,7 @@ def full_doc(fragment, desc, url, og_title):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="{desc}">
-<meta name="theme-color" content="#0E151D">
+<meta name="theme-color" content="#000000">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="{url}">
 <meta property="og:type" content="website">

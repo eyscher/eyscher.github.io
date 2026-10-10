@@ -1,44 +1,44 @@
 <title>Eitan Y. Scher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
 <style>
 /* Layout: one left-aligned reading column (~66ch) inside a 1120px frame; figures break out to the full frame.
    Idea: real time is set wide, remembered time is set narrow. Width carries meaning only in the featured headline. */
-/* Dark-first ("blue hour"): dark is the default for every visitor; the header switch offers light. */
+/* Dark-first: true black with a darkroom-safelight red; the header switch offers light. */
 :root {
-  --paper: #0E151D;
-  --surface: #131C27;
-  --ink: #E3E9F0;
-  --ink-2: #A6B2C1;
-  --ink-3: #8592A3;
-  --rule: #263240;
-  --grid: #1D2733;
-  --accent: #D99A52;
-  --accent-ink: #0E151D;
+  --paper: #000000;
+  --surface: #121212;
+  --ink: #ECEAE6;
+  --ink-2: #B3B0AB;
+  --ink-3: #8A8782;
+  --rule: #2A2A2A;
+  --grid: #1C1C1C;
+  --accent: #C8102E;
+  --accent-ink: #FFFFFF;
   --med: #5F8BD4;
   --aud: #C77F3C;
-  --band: #1B2532;
-  --z1: #2C394A;
-  --z2: #222D3A;
-  --z3: #18212C;
-  --chip: #1E2835;
-  --film: #080B0F;
-  --film-edge: #1A1F26;
+  --band: #141414;
+  --z1: #333333;
+  --z2: #262626;
+  --z3: #1A1A1A;
+  --chip: #1A1A1A;
+  --film: #000000;
+  --film-edge: #161616;
   --film-print: #C9A15A;
-  --shadow: rgba(0, 0, 0, 0.45);
-  --amber: #D99A52;
-  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --text: "Newsreader", Georgia, "Times New Roman", serif;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --amber: #C8102E;
+  --display: "Spectral", Georgia, "Times New Roman", serif;
+  --text: "Spectral", Georgia, "Times New Roman", serif;
   color-scheme: dark;
 }
 :root[data-theme="light"] {
-  --paper: #F1F4F7; --surface: #FBFCFD; --ink: #15202C; --ink-2: #46556A; --ink-3: #66758A;
-  --rule: #D2DAE3; --grid: #E2E8EE; --accent: #A0580F; --accent-ink: #FFFFFF;
-  --med: #2B5DA8; --aud: #B8661C; --band: #E6ECF2; --z1: #D3DCE7; --z2: #E1E7EE; --z3: #F0F3F6;
-  --chip: #E3E9F1; --film: #1B1F24; --film-edge: #2B3038; --film-print: #C9A15A;
-  --shadow: rgba(15, 25, 40, 0.14);
-  --amber: #A0580F;
+  --paper: #F7F7F5; --surface: #FFFFFF; --ink: #141414; --ink-2: #4A4A4A; --ink-3: #6B6B6B;
+  --rule: #DADAD7; --grid: #E8E8E5; --accent: #B0101F; --accent-ink: #FFFFFF;
+  --med: #2B5DA8; --aud: #B8661C; --band: #EFEFEC; --z1: #D6D6D3; --z2: #E3E3E0; --z3: #F0F0EE;
+  --chip: #EBEBE8; --film: #111111; --film-edge: #2A2A2A; --film-print: #C9A15A;
+  --shadow: rgba(0, 0, 0, 0.12);
+  --amber: #B0101F;
   color-scheme: light;
 }
 
@@ -57,7 +57,7 @@ body {
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
 }
-a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a { color: var(--ink); text-decoration-color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 p { margin: 0; }
@@ -102,20 +102,8 @@ h1, h2, h3, h4 { font-family: var(--display); margin: 0; text-wrap: balance; col
 :root[data-theme="light"] .theme-btn .sun { display: block; }
 :root[data-theme="light"] .theme-btn .moon { display: none; }
 
-/* Hero: text on the left, a clock on the right whose ticks bunch and stretch the way remembered time does */
-.hero { padding-block: clamp(56px, 9vw, 112px) clamp(48px, 7vw, 88px);
-  display: grid; grid-template-columns: minmax(0, 1fr) clamp(240px, 27vw, 330px); column-gap: clamp(24px, 4vw, 56px); position: relative; }
-.hero > h1 { grid-column: 1 / -1; }
-.hero > .lede, .hero > .facts, .hero > .actions { grid-column: 1; }
-.dial-box { grid-column: 2; grid-row: 2 / span 3; align-self: start; margin-top: 30px; display: grid; gap: 10px; justify-items: center; }
-.dial { width: 100%; aspect-ratio: 1; max-width: 100%; display: block; }
-.dial-note { font-family: var(--display); font-size: 13px; line-height: 1.45; color: var(--ink-3); text-align: center; max-width: 26ch; }
-@media (max-width: 860px) {
-  .hero { grid-template-columns: minmax(0, 1fr); }
-  .dial-box { position: absolute; top: clamp(12px, 4vw, 32px); right: 0; width: clamp(150px, 40vw, 240px); margin: 0; opacity: 0.4; pointer-events: none; z-index: 0; grid-column: auto; grid-row: auto; }
-  .dial-note { display: none; }
-  .hero > *:not(.dial-box) { position: relative; z-index: 1; }
-}
+/* Hero */
+.hero { padding-block: clamp(56px, 9vw, 112px) clamp(48px, 7vw, 88px); position: relative; }
 .hero h1 {
   font-size: clamp(50px, 9.2vw, 108px); font-weight: 780; font-stretch: 112%;
   line-height: 0.95; letter-spacing: -0.025em;
@@ -146,12 +134,8 @@ section.band { border-top: 1px solid var(--rule); padding-block: clamp(64px, 9vw
 /* Featured headline: line two is set narrower, the way meditators remembered the eight minutes */
 .compress { font-size: clamp(36px, 6vw, 76px); font-weight: 720; line-height: 1.0; letter-spacing: -0.02em; }
 .compress span { display: block; }
-.compress .l1 { font-stretch: 100%; }
 .compress .sub { display: block; font-size: 0.5em; margin-top: 0.4em; line-height: 1.1; color: var(--ink-2); font-weight: 650; letter-spacing: -0.01em; }
 .compress .sub span { display: inline; }
-.compress .l2 { font-stretch: 62%; transition: font-stretch 1.8s cubic-bezier(.2,.7,.1,1); }
-.compress.pre .l2 { font-stretch: 100%; }
-@media (prefers-reduced-motion: reduce) { .compress .l2 { transition: none; } }
 
 h3 { font-size: clamp(24px, 2.6vw, 30px); font-weight: 680; font-stretch: 92%; line-height: 1.12; letter-spacing: -0.01em; }
 h4 { font-size: 21px; font-weight: 650; font-stretch: 95%; line-height: 1.2; }
@@ -358,11 +342,7 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
   <div class="hero-band">
   <div class="wrap hero">
     <h1>Eitan Y. Scher</h1>
-    <div class="dial-box" aria-hidden="true">
-      <canvas class="dial" id="dial" width="660" height="660"></canvas>
-      <p class="dial-note">The clock shows the real time, but its ticks are uneven, because time doesn’t always feel steady.</p>
-    </div>
-    <p class="lede">Psychology researcher and research ethics professional based in Brooklyn. I study how meditation, awe and other altered states change the way we experience time and the self. Lately I’m most interested in the shared versions: what happens to people at concerts and festivals.</p>
+    <p class="lede">Psychology researcher and research ethics professional based in Brooklyn. I study how meditation, awe and other altered states change the way we experience time and the self. More recently, I’ve been interested in exploring the shared versions: what happens to people at concerts and festivals.</p>
     <dl class="facts">
       <dt>Now</dt>
       <dd>IRB Associate II, Icahn School of Medicine at Mount Sinai</dd>
@@ -1020,22 +1000,6 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
   }
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawAll);
 
-  // Headline: compress line two when it comes into view
-  var head = document.querySelector(".compress");
-  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (head && "IntersectionObserver" in window && !reduce) {
-    var rect = head.getBoundingClientRect();
-    if (rect.top > window.innerHeight * 0.85) {
-      head.classList.add("pre");
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting) { setTimeout(function () { head.classList.remove("pre"); }, 250); io.disconnect(); }
-        });
-      }, { threshold: 0.6 });
-      io.observe(head);
-    }
-  }
-
   // Try it: a retrospective estimate of time on page
   var start = Date.now() - (window.performance && performance.now ? performance.now() : 0);
   var verdict = document.getElementById("verdict");
@@ -1054,53 +1018,6 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
     });
   });
 
-  // Hero clock: 120 ticks whose spacing slowly bunches and stretches; the hand keeps real seconds
-  (function () {
-    var cv = document.getElementById("dial"); if (!cv || !cv.getContext) return;
-    var ctx = cv.getContext("2d");
-    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var visible = true, last = 0, t0 = performance.now();
-    function css(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
-    function size() {
-      var w = cv.clientWidth || 300, d = Math.min(window.devicePixelRatio || 1, 2);
-      if (cv.width !== Math.round(w * d)) { cv.width = Math.round(w * d); cv.height = Math.round(w * d); }
-      return { w: w, d: d };
-    }
-    function draw(now) {
-      var z = size(), w = z.w, c = w / 2, R = w / 2 - 6;
-      ctx.setTransform(z.d, 0, 0, z.d, 0, 0); ctx.clearRect(0, 0, w, w);
-      var t = (now - t0) / 1000;
-      var a = still ? 0.2 : 0.2 + 0.11 * Math.sin(t / 4.5);   // how strongly time bunches
-      var phi = still ? 0.6 : t / 26;                           // where it bunches, drifting slowly
-      var ink2 = css("--ink-2"), ink3 = css("--ink-3"), amber = css("--amber"), rule = css("--rule");
-      ctx.lineCap = "round";
-      ctx.beginPath(); ctx.arc(c, c, R, 0, Math.PI * 2); ctx.strokeStyle = rule; ctx.lineWidth = 1; ctx.stroke();
-      for (var i = 0; i < 120; i++) {
-        var u = i / 120, th = 2 * Math.PI * u + a * Math.sin(2 * Math.PI * u - phi);
-        var major = i % 10 === 0, len = major ? w * 0.055 : w * 0.025;
-        var sx = Math.sin(th), sy = -Math.cos(th);
-        ctx.beginPath();
-        ctx.moveTo(c + sx * (R - 6), c + sy * (R - 6));
-        ctx.lineTo(c + sx * (R - 6 - len), c + sy * (R - 6 - len));
-        ctx.strokeStyle = major ? ink2 : ink3; ctx.globalAlpha = major ? 0.95 : 0.55;
-        ctx.lineWidth = major ? 2 : 1.2; ctx.stroke();
-      }
-      ctx.globalAlpha = 1;
-      var secs = (Date.now() / 1000) % 60, ang = 2 * Math.PI * secs / 60;
-      var hx = Math.sin(ang), hy = -Math.cos(ang);
-      ctx.beginPath(); ctx.moveTo(c - hx * w * 0.06, c - hy * w * 0.06); ctx.lineTo(c + hx * (R - w * 0.1), c + hy * (R - w * 0.1));
-      ctx.strokeStyle = amber; ctx.lineWidth = 2; ctx.stroke();
-      ctx.beginPath(); ctx.arc(c, c, 4, 0, Math.PI * 2); ctx.fillStyle = amber; ctx.fill();
-    }
-    function loop(now) {
-      if (visible && !document.hidden && now - last > 33) { draw(now); last = now; }
-      requestAnimationFrame(loop);
-    }
-    draw(performance.now());
-    if (still) { setInterval(function () { draw(performance.now()); }, 1000); return; }
-    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(cv);
-    requestAnimationFrame(loop);
-  })();
 
   // Theme switch: dark by default, light on request; remembered per visitor
   var themeBtn = document.getElementById("theme-btn");

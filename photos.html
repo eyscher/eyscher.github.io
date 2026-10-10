@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="EYS of the World: photographs by Eitan Y. Scher, mostly on 35 mm film.">
-<meta name="theme-color" content="#0E151D">
+<meta name="theme-color" content="#000000">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://eyscher.com/photos">
 <meta property="og:type" content="website">
@@ -16,22 +16,22 @@
 <title>EYS of the World</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
 <style>
 /* Layout: an image-led page. Title, series links, then each series as a masonry of photographs; click opens a full-screen viewer.
    Same tokens and dark-first theme as the main page. */
 :root {
-  --paper: #0E151D; --surface: #131C27; --ink: #E3E9F0; --ink-2: #A6B2C1; --ink-3: #8592A3;
-  --rule: #263240; --accent: #D99A52; --accent-ink: #0E151D; --amber: #D99A52;
-  --scrim: rgba(6, 9, 13, 0.985); --chip: #1E2835;
-  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --text: "Newsreader", Georgia, "Times New Roman", serif;
+  --paper: #000000; --surface: #121212; --ink: #ECEAE6; --ink-2: #B3B0AB; --ink-3: #8A8782;
+  --rule: #2A2A2A; --accent: #C8102E; --accent-ink: #FFFFFF; --amber: #C8102E;
+  --scrim: rgba(0, 0, 0, 0.985); --chip: #1A1A1A;
+  --display: "Spectral", Georgia, "Times New Roman", serif;
+  --text: "Spectral", Georgia, "Times New Roman", serif;
   color-scheme: dark;
 }
 :root[data-theme="light"] {
-  --paper: #F1F4F7; --surface: #FBFCFD; --ink: #15202C; --ink-2: #46556A; --ink-3: #66758A;
-  --rule: #D2DAE3; --accent: #A0580F; --accent-ink: #FFFFFF; --amber: #A0580F;
-  --scrim: rgba(241, 244, 247, 0.985); --chip: #E3E9F1;
+  --paper: #F7F7F5; --surface: #FFFFFF; --ink: #141414; --ink-2: #4A4A4A; --ink-3: #6B6B6B;
+  --rule: #DADAD7; --accent: #B0101F; --accent-ink: #FFFFFF; --amber: #B0101F;
+  --scrim: rgba(247, 247, 245, 0.985); --chip: #EBEBE8;
   color-scheme: light;
 }
 * { box-sizing: border-box; }
@@ -41,7 +41,7 @@ img { max-width: 100%; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body { background: var(--paper); color: var(--ink); font-family: var(--text); font-size: 19px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 p { margin: 0; }
 h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; }
