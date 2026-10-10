@@ -14,7 +14,7 @@
   --ink-3: #8592A3;
   --rule: #263240;
   --grid: #1D2733;
-  --accent: #8DB0EA;
+  --accent: #D99A52;
   --accent-ink: #0E151D;
   --med: #5F8BD4;
   --aud: #C77F3C;
@@ -28,19 +28,17 @@
   --film-print: #C9A15A;
   --shadow: rgba(0, 0, 0, 0.45);
   --amber: #D99A52;
-  --glow-a: rgba(95, 139, 212, 0.20);
-  --glow-b: rgba(217, 154, 82, 0.09);
   --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --text: "Newsreader", Georgia, "Times New Roman", serif;
   color-scheme: dark;
 }
 :root[data-theme="light"] {
   --paper: #F1F4F7; --surface: #FBFCFD; --ink: #15202C; --ink-2: #46556A; --ink-3: #66758A;
-  --rule: #D2DAE3; --grid: #E2E8EE; --accent: #2B5DA8; --accent-ink: #FFFFFF;
+  --rule: #D2DAE3; --grid: #E2E8EE; --accent: #A0580F; --accent-ink: #FFFFFF;
   --med: #2B5DA8; --aud: #B8661C; --band: #E6ECF2; --z1: #D3DCE7; --z2: #E1E7EE; --z3: #F0F3F6;
   --chip: #E3E9F1; --film: #1B1F24; --film-edge: #2B3038; --film-print: #C9A15A;
   --shadow: rgba(15, 25, 40, 0.14);
-  --amber: #B8661C; --glow-a: rgba(43, 93, 168, 0.10); --glow-b: rgba(184, 102, 28, 0.06);
+  --amber: #A0580F;
   color-scheme: light;
 }
 
@@ -105,9 +103,6 @@ h1, h2, h3, h4 { font-family: var(--display); margin: 0; text-wrap: balance; col
 :root[data-theme="light"] .theme-btn .moon { display: none; }
 
 /* Hero: text on the left, a clock on the right whose ticks bunch and stretch the way remembered time does */
-.hero-band { background:
-  radial-gradient(60% 70% at 85% 20%, var(--glow-a), transparent 70%),
-  radial-gradient(40% 50% at 70% 85%, var(--glow-b), transparent 70%); }
 .hero { padding-block: clamp(56px, 9vw, 112px) clamp(48px, 7vw, 88px);
   display: grid; grid-template-columns: minmax(0, 1fr) clamp(240px, 27vw, 330px); column-gap: clamp(24px, 4vw, 56px); position: relative; }
 .hero > h1 { grid-column: 1 / -1; }
@@ -362,7 +357,7 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
     <h1>Eitan Y. Scher</h1>
     <div class="dial-box" aria-hidden="true">
       <canvas class="dial" id="dial" width="660" height="660"></canvas>
-      <p class="dial-note">This clock keeps real time. Its ticks bunch and stretch, the way remembered time does.</p>
+      <p class="dial-note">The clock shows the real time, but its ticks are uneven, because time doesn’t always feel steady.</p>
     </div>
     <p class="lede">Psychology researcher and research ethics professional in Brooklyn. I study how meditation, awe and other altered states change the way we experience time and the self.</p>
     <dl class="facts">
@@ -370,8 +365,8 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
       <dd>IRB Associate II, Icahn School of Medicine at Mount Sinai</dd>
       <dt>Before</dt>
       <dd>Clinical research coordinator in anesthesiology at Columbia University Irving Medical Center, studying delirium and recovery of consciousness with EEG</dd>
-      <dt>Trained</dt>
-      <dd>B.A. in Psychology, cum laude, Rutgers University (honors thesis with David Wilder); study abroad at the Hebrew University of Jerusalem</dd>
+      <dt>Education</dt>
+      <dd>B.A. in Psychology, cum laude, Rutgers University (honors thesis with David Wilder)</dd>
     </dl>
     <div class="actions">
       <a class="btn primary" href="#research">Read the reanalysis</a>
@@ -391,7 +386,7 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
 
       <div class="stack measure">
         <p>In 2019, 214 Rutgers undergraduates listened to an eight-minute recording: either a guided meditation or a passage of <i>The Hobbit</i> audiobook. Afterward, with no warning that the question was coming, they estimated how long it had lasted.</p>
-        <p>This year I reanalyzed the original data from the raw files in R, adding effect sizes, Bayes factors and a full set of robustness checks. The main result held up. Two of my original explanations did not.</p>
+        <p>This year I reanalyzed the original data from the raw files in R, adding effect sizes, Bayes factors and a full set of robustness checks. The main result held up, but two of my original explanations for it did not.</p>
       </div>
 
       <div class="block">
@@ -497,8 +492,8 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
       </div>
 
       <div class="block">
-        <h3>Could something boring explain it?</h3>
-        <p class="measure" style="margin-top:10px;color:var(--ink-2)">Each check asks whether a mundane problem could have produced the main result. None did.</p>
+        <h3>Robustness checks</h3>
+        <p class="measure" style="margin-top:10px;color:var(--ink-2)">I tested whether problems with the data or the analysis could account for the main result. It was still significant in every check.</p>
         <div class="tablewrap">
           <table class="widetable">
             <thead><tr><th>The worry</th><th>The check</th><th>Result</th></tr></thead>
@@ -541,7 +536,7 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
       </div>
 
       <div class="tryit" id="tryit">
-        <h4>Now, a question for you</h4>
+        <h4>Try it yourself</h4>
         <p>You’ve been reading for a while. Without checking a clock, how long do you think you’ve been on this page?</p>
         <div class="choices" role="group" aria-label="Your estimate">
           <button class="choice" type="button" id="try-0" data-lo="0" data-hi="120">Under 2 min</button>
@@ -560,7 +555,7 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
     <div class="wrap">
       <div class="sec-head">
         <h2 id="work-title">Other projects</h2>
-        <p>Clinical research, consciousness and the scholarship of spiritual experience.</p>
+        <p>Clinical research at Columbia, editorial work on a book about spiritual experience, and this site.</p>
       </div>
       <div class="work">
         <article>
@@ -608,15 +603,13 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
     <div class="wrap">
       <div class="sec-head">
         <h2 id="methods-title">How I work</h2>
-        <p>Careful methods, and AI used where it makes the work faster without making it less checkable.</p>
+        <p>How I approach research, and where AI fits in.</p>
       </div>
       <div class="cols">
         <div>
           <h3>Methods and tools</h3>
           <div class="skills">
-            <div><h4>Design</h4><p>Factorial between-subjects experiments, retrospective and prospective timing tasks, and Qualtrics surveys with randomization, branching and custom JavaScript.</p></div>
-            <div><h4>Analysis</h4><p>ANOVA and ANCOVA, mixed models, permutation tests, Bayes factors and nonparametric tests, reported with effect sizes and confidence intervals.</p></div>
-            <div><h4>Software</h4><p>R and RStudio, SPSS, Python with PsychoPy, Excel, EndNote and Zotero.</p></div>
+            <div><h4>Research methods</h4><p>Between-subjects experiments, retrospective and prospective timing tasks, and Qualtrics surveys. I analyze data in R and SPSS with ANOVA, mixed models, Bayes factors and nonparametric tests, and report effect sizes and confidence intervals.</p></div>
             <div><h4>Clinical and regulatory</h4><p>EEG setup in the operating room, consent of surgical patients, and IRB review under 45 CFR 46, the Common Rule and ICH-GCP.</p></div>
           </div>
         </div>
@@ -624,20 +617,12 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
           <h3>Working with AI</h3>
           <div class="practices">
             <div>
-              <h4>Code that checks itself</h4>
+              <h4>Analysis scripts</h4>
               <p>Claude helped me write the reanalysis script, and I ran it myself in RStudio. Every result line carries the number it should produce, so I could confirm each statistic as I went, and anyone can rerun it from the raw files.</p>
             </div>
             <div>
-              <h4>Sources opened, not trusted</h4>
+              <h4>Literature reviews</h4>
               <p>Literature summaries from Claude give me a starting list, and I open and check every source before citing it. Auditing my 2019 thesis this way turned up eight citation and terminology errors to fix before submission.</p>
-            </div>
-            <div>
-              <h4>Plain-language companions</h4>
-              <p>The results draft has a reading guide that explains every statistic in plain terms and anticipates reviewers' questions, so collaborators can check the reasoning as well as the numbers.</p>
-            </div>
-            <div>
-              <h4>Data hygiene</h4>
-              <p>Cross-checking the study's data files caught two condition codes swapped in one of them. I documented the problem in a README and rebuilt the analysis on the columns that were right in every file.</p>
             </div>
           </div>
         </div>
@@ -688,10 +673,10 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
           <h3>Experience</h3>
           <div class="timeline">
             <div><span class="y">2024–now</span><span><span class="r">IRB Associate II</span><br><span class="o">Icahn School of Medicine at Mount Sinai</span></span></div>
-            <div><span class="y">2022–2024</span><span><span class="r">Independent researcher and tutor</span><br><span class="o">Literature reviews and data cleaning; tutoring in psychology, English, history and Hebrew</span></span></div>
-            <div><span class="y">2021–2022</span><span><span class="r">Educational assistant</span><br><span class="o">The Academies at Gerrard Berman Day School</span></span></div>
-            <div><span class="y">2019–2021</span><span><span class="r">Clinical research coordinator</span><br><span class="o">Columbia University Irving Medical Center, Anesthesiology</span></span></div>
-            <div><span class="y">2018–2019</span><span><span class="r">Honors researcher and research assistant</span><br><span class="o">Rutgers University: Wilder Lab, DBT-RU, Social Cognition Lab, Cognitive Development Lab</span></span></div>
+            <div><span class="y">2022–2024</span><span><span class="r">Independent Researcher and Tutor</span><br><span class="o">Literature reviews and data cleaning; tutoring in psychology, English, history and Hebrew</span></span></div>
+            <div><span class="y">2021–2022</span><span><span class="r">Educational Assistant</span><br><span class="o">The Academies at Gerrard Berman Day School</span></span></div>
+            <div><span class="y">2019–2021</span><span><span class="r">Clinical Research Coordinator</span><br><span class="o">Columbia University Irving Medical Center, Anesthesiology</span></span></div>
+            <div><span class="y">2018–2019</span><span><span class="r">Honors Researcher and Research Assistant</span><br><span class="o">Rutgers University: Wilder Lab, DBT-RU, Social Cognition Lab, Cognitive Development Lab</span></span></div>
           </div>
         </div>
       </div>

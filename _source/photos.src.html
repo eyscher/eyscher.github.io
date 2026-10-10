@@ -7,18 +7,16 @@
    Same tokens and dark-first theme as the main page. */
 :root {
   --paper: #0E151D; --surface: #131C27; --ink: #E3E9F0; --ink-2: #A6B2C1; --ink-3: #8592A3;
-  --rule: #263240; --accent: #8DB0EA; --accent-ink: #0E151D; --amber: #D99A52;
+  --rule: #263240; --accent: #D99A52; --accent-ink: #0E151D; --amber: #D99A52;
   --scrim: rgba(6, 9, 13, 0.985); --chip: #1E2835;
-  --glow-a: rgba(95, 139, 212, 0.16); --glow-b: rgba(217, 154, 82, 0.10);
   --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --text: "Newsreader", Georgia, "Times New Roman", serif;
   color-scheme: dark;
 }
 :root[data-theme="light"] {
   --paper: #F1F4F7; --surface: #FBFCFD; --ink: #15202C; --ink-2: #46556A; --ink-3: #66758A;
-  --rule: #D2DAE3; --accent: #2B5DA8; --accent-ink: #FFFFFF; --amber: #B8661C;
+  --rule: #D2DAE3; --accent: #A0580F; --accent-ink: #FFFFFF; --amber: #A0580F;
   --scrim: rgba(241, 244, 247, 0.985); --chip: #E3E9F1;
-  --glow-a: rgba(43, 93, 168, 0.08); --glow-b: rgba(184, 102, 28, 0.06);
   color-scheme: light;
 }
 * { box-sizing: border-box; }
@@ -56,7 +54,6 @@ h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; }
 }
 
 /* Title: the name set wide, the way the eye takes in a whole scene */
-.intro { background: radial-gradient(55% 80% at 80% 10%, var(--glow-a), transparent 70%), radial-gradient(35% 60% at 15% 100%, var(--glow-b), transparent 70%); }
 .intro .wrap { padding-block: clamp(56px, 9vw, 120px) clamp(32px, 5vw, 56px); max-width: 1120px; }
 .intro h1 { font-size: clamp(48px, 10vw, 128px); font-weight: 800; font-stretch: 125%; line-height: 0.92; letter-spacing: -0.03em; }
 .intro p { margin-top: 24px; font-size: clamp(19px, 2vw, 23px); color: var(--ink-2); max-width: 38em; line-height: 1.5; }
