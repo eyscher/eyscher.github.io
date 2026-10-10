@@ -235,6 +235,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
   .widetable td:not(:first-child)::before { content: attr(data-label) ": "; color: var(--ink-3); font-weight: 600; }
 }
 
+.portrait { display: block; width: min(100%, 260px); height: auto; margin-bottom: 6px; }
 /* Findings */
 .findings { display: grid; gap: 0; margin-top: 28px; }
 .finding { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; padding-block: 28px; border-top: 1px solid var(--rule); }
@@ -606,6 +607,7 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
       </div>
       <div class="cols">
         <div class="stack">
+          <img class="portrait" src="img/portrait.jpg" width="640" height="800" alt="Eitan Y. Scher" loading="lazy" decoding="async">
           <p>I review human subjects research at the Icahn School of Medicine at Mount Sinai and process approximately 150 submissions a month across behavioral and biomedical studies. Earlier, I spent two years in Columbia’s Department of Anesthesiology, coordinating studies of postoperative delirium and recovery of consciousness.</p>
           <p>My research interests center on how morally and existentially significant experiences, from meditation to awe to psychedelic states, reshape cognition, identity and the sense of time. Recently, I earned a certificate in interdisciplinary psychedelic studies from Ohio State.</p>
           <p>Outside work I shoot photos, play guitar, snowboard and scuba dive. If there’s a Phish show or a Grateful Dead cover band nearby, I’m probably there.</p>
