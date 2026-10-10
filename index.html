@@ -481,39 +481,6 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
         </div>
       </div>
 
-      <div class="block">
-        <h3>Robustness checks</h3>
-        <p class="measure" style="margin-top:10px;color:var(--ink-2)">I tested whether problems with the data or the analysis could account for the main result. It was still significant in every check.</p>
-        <div class="tablewrap">
-          <table class="widetable">
-            <thead><tr><th>The worry</th><th>The check</th><th>Result</th></tr></thead>
-            <tbody>
-              <tr><td>The answers are categories, not real numbers</td><td>A rank-based test (Mann–Whitney)</td><td>Same result, <i>p</i> &lt; .001</td></tr>
-              <tr><td>Some people guessed the study was about time</td><td>Dropped the 24 to 29 who did</td><td>Still <i>p</i> &lt; .001</td></tr>
-              <tr><td>One participant may appear twice</td><td>Dropped the second record</td><td><i>F</i>&nbsp;=&nbsp;24.22, against 23.13</td></tr>
-              <tr><td>Meditation groups reported more past meditation</td><td>Held prior experience constant</td><td><i>F</i>&nbsp;=&nbsp;23.79, unchanged</td></tr>
-              <tr><td>Non-native English speakers were excluded</td><td>Added all 69 back (<i>N</i>&nbsp;=&nbsp;283)</td><td><i>d</i>&nbsp;=&nbsp;−0.48, <i>p</i> &lt; .001</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="block">
-        <h3>What changed since the 2019 thesis</h3>
-        <div class="tablewrap">
-          <table class="widetable">
-            <thead><tr><th>Issue</th><th>2019 thesis</th><th>2026 reanalysis</th></tr></thead>
-            <tbody>
-              <tr><td>Shape trial</td><td>Each person counted four times, once per shape, as if there were 856 participants</td><td>One score per person, adjusted for the first trial. Reported as weak evidence.</td></tr>
-              <tr><td>Why time flew</td><td>Meditators were absorbed in flow</td><td>Ruled out. The focus difference came from the mirror group's instructions, and focus didn't predict estimates (<i>r</i>&nbsp;=&nbsp;−.03).</td></tr>
-              <tr><td>Self-awareness</td><td>A non-significant correlation</td><td>A Bayes factor of about 6 in favor of no link</td></tr>
-              <tr><td>Statistics</td><td><i>p</i>-values from SPSS</td><td>Effect sizes with confidence intervals, Bayes factors, a permutation test and a mixed model</td></tr>
-              <tr><td>Data files</td><td>Not audited</td><td>Found two condition codes swapped in the full-sample file and documented it. Every analysis now uses the correct columns; the thesis results were unaffected.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
       <div class="block measure">
         <h3>How it was done</h3>
         <dl class="method-box">
