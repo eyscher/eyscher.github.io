@@ -16,8 +16,8 @@
   --grid: #1C1C1C;
   --accent: #C8102E;
   --accent-ink: #FFFFFF;
-  --med: #5F8BD4;
-  --aud: #C77F3C;
+  --med: #C8102E;
+  --aud: #8A8782;
   --band: #141414;
   --z1: #333333;
   --z2: #262626;
@@ -35,7 +35,7 @@
 :root[data-theme="light"] {
   --paper: #F7F7F5; --surface: #FFFFFF; --ink: #141414; --ink-2: #4A4A4A; --ink-3: #6B6B6B;
   --rule: #DADAD7; --grid: #E8E8E5; --accent: #B0101F; --accent-ink: #FFFFFF;
-  --med: #2B5DA8; --aud: #B8661C; --band: #EFEFEC; --z1: #D6D6D3; --z2: #E3E3E0; --z3: #F0F0EE;
+  --med: #B0101F; --aud: #8C8C8C; --band: #EFEFEC; --z1: #D6D6D3; --z2: #E3E3E0; --z3: #F0F0EE;
   --chip: #EBEBE8; --film: #111111; --film-edge: #2A2A2A; --film-print: #C9A15A;
   --shadow: rgba(0, 0, 0, 0.12);
   --amber: #B0101F;
@@ -172,9 +172,9 @@ h4 { font-size: 21px; font-weight: 650; font-stretch: 95%; line-height: 1.2; }
 
 /* Figures: always light, like printed plates, in either site theme */
 .fig {
-  --surface: #FBFCFD; --ink: #15202C; --ink-2: #46556A; --ink-3: #66758A; --rule: #D2DAE3; --grid: #E2E8EE;
-  --accent: #2B5DA8; --accent-ink: #FFFFFF; --med: #2B5DA8; --aud: #B8661C; --band: #E6ECF2;
-  --z1: #D3DCE7; --z2: #E1E7EE; --z3: #F0F3F6; --chip: #E3E9F1; --shadow: rgba(15, 25, 40, 0.16);
+  --surface: #FFFFFF; --ink: #141414; --ink-2: #4A4A4A; --ink-3: #6B6B6B; --rule: #DADAD7; --grid: #E8E8E5;
+  --accent: #B0101F; --accent-ink: #FFFFFF; --med: #B0101F; --aud: #8C8C8C; --band: #EFEFEC;
+  --z1: #D6D6D3; --z2: #E3E3E0; --z3: #F0F0EE; --chip: #EBEBE8; --shadow: rgba(0, 0, 0, 0.14);
   color-scheme: light;
   background: var(--surface); color: var(--ink);
   border: 1px solid var(--rule); border-radius: 6px; padding: clamp(16px, 2.6vw, 28px);
@@ -184,7 +184,7 @@ h4 { font-size: 21px; font-weight: 650; font-stretch: 95%; line-height: 1.2; }
 .fig-tools { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; justify-content: space-between; margin-top: 14px; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--display); font-size: 14px; color: var(--ink-2); }
 .legend span { display: inline-flex; align-items: center; gap: 7px; }
-.linkbtn { font-family: var(--display); font-size: 14px; font-weight: 600; color: var(--accent); background: none; border: 0; padding: 4px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.linkbtn { font-family: var(--display); font-size: 14px; font-weight: 600; color: var(--ink); text-decoration-color: var(--accent); background: none; border: 0; padding: 4px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 .chart { position: relative; margin-top: 10px; width: 100%; }
 .chart svg { display: block; width: 100%; overflow: visible; }
 .chart text { font-family: var(--display); }
@@ -374,7 +374,7 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
 
       <div class="block">
         <h3>The design</h3>
-        <p class="measure" style="margin-top:10px;color:var(--ink-2)">Each participant was randomly assigned to one of four groups. The recording varied, as did attentional focus: on the self and body, or on a narrative. The body-and-breath meditation and <i>The Hobbit</i> audiobook come from <a href="https://doi.org/10.1016/j.concog.2013.05.008">Kramer et al. (2013)</a>; the waterfall visualization and the mirror were added for this study.</p>
+        <p class="measure" style="margin-top:10px;color:var(--ink-2)">Each participant was randomly assigned to one of four groups. The recording varied, as did attentional focus: on the self and body, or on a narrative. The body-and-breath meditation and <i>The Hobbit</i> audiobook come from <a href="https://doi.org/10.1016/j.concog.2013.05.008">Kramer et al. (2013)</a>; for my study, we also added a waterfall visualization and manipulated self-focused attention via a mirror.</p>
         <div class="design" role="table" aria-label="Study design: four groups">
           <div class="hd corner" role="columnheader"></div>
           <div class="hd" role="columnheader">Self or body focus</div>
