@@ -169,13 +169,13 @@ h4 { font-size: 21px; font-weight: 650; font-stretch: 95%; line-height: 1.2; }
 .key.dot { border-radius: 50%; }
 
 /* Try-it */
-.tryit { margin-top: clamp(40px, 5vw, 64px); border-left: 3px solid var(--accent); padding: 4px 0 4px 22px; max-width: 760px; }
+.tryit { margin-top: clamp(40px, 5vw, 64px); max-width: 760px; }
 .tryit h4 { font-size: 20px; }
 .tryit p { color: var(--ink-2); margin-top: 6px; }
 .choices { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .choice {
   font-family: var(--display); font-size: 15px; font-weight: 550; color: var(--ink);
-  background: var(--surface); border: 1px solid var(--rule); border-radius: 999px;
+  background: transparent; border: 1px solid var(--rule); border-radius: 4px;
   padding: 8px 15px; cursor: pointer; font-variant-numeric: tabular-nums;
 }
 .choice:hover { border-color: var(--accent); }
@@ -245,9 +245,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .split { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); align-items: start; }
 @media (max-width: 860px) { .split { grid-template-columns: minmax(0, 1fr); } }
 
-.method-box { display: grid; grid-template-columns: max-content 1fr; gap: 10px 24px; font-size: 17px; margin-top: 18px; }
-.method-box dt { font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--ink-3); padding-top: 2px; }
-.method-box dd { margin: 0; color: var(--ink-2); min-width: 0; }
+.method-note { margin-top: 12px; color: var(--ink-2); max-width: 64ch; }
 
 /* Projects */
 .work { display: grid; }
@@ -312,8 +310,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 @media (max-width: 560px) {
   body { font-size: 18px; }
-  .method-box { grid-template-columns: minmax(0, 1fr); gap: 2px; }
-  .method-box dd { margin-bottom: 10px; }
   .design { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .design .corner { display: none; }
   .design .rh { grid-column: 1 / -1; padding: 12px 0 2px; }
@@ -474,11 +470,7 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
 
       <div class="block measure">
         <h3>How it was done</h3>
-        <dl class="method-box">
-          <dt>Software</dt><dd>R 4.6.1 with haven, nlme, BayesFactor and ggplot2</dd>
-          <dt>Analysis</dt><dd>I ran the full analysis myself in RStudio, working from the raw SPSS files, and checked every result against the original output.</dd>
-          <dt>AI-assisted</dt><dd>Claude (Anthropic) helped write the R script and the companion documents.</dd>
-        </dl>
+        <p class="method-note">I ran the analysis in RStudio (R 4.6.1, with haven, nlme, BayesFactor and ggplot2), working from the raw SPSS files, and checked every result against the original output. Claude (Anthropic) helped write the R script.</p>
       </div>
 
       <div class="tryit" id="tryit">
