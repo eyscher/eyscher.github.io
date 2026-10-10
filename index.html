@@ -124,9 +124,7 @@ h1, h2, h3, h4 { font-family: var(--display); margin: 0; text-wrap: balance; col
   line-height: 0.95; letter-spacing: -0.025em;
 }
 .hero .lede { font-size: clamp(21px, 2.3vw, 27px); line-height: 1.42; margin-top: 28px; max-width: 30em; color: var(--ink); }
-.facts { display: grid; grid-template-columns: max-content 1fr; gap: 10px 28px; margin: 40px 0 0; max-width: 46em; }
-.facts dt { font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--ink-3); padding-top: 3px; }
-.facts dd { margin: 0; font-size: 18px; color: var(--ink-2); min-width: 0; }
+.hero .intro { display: grid; gap: 0.9em; margin-top: 22px; max-width: 36em; font-size: clamp(18px, 1.55vw, 20px); line-height: 1.6; color: var(--ink-2); }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; align-items: center; }
 .btn {
   font-family: var(--display); font-size: 16px; font-weight: 600;
@@ -313,8 +311,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 @media (max-width: 560px) {
   body { font-size: 18px; }
-  .facts { grid-template-columns: minmax(0, 1fr); gap: 2px; }
-  .facts dd { margin-bottom: 12px; }
   .method-box { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .method-box dd { margin-bottom: 10px; }
   .design { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
@@ -349,15 +345,11 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
   <div class="hero-band">
   <div class="wrap hero">
     <h1>Eitan Y. Scher</h1>
-    <p class="lede">Psychology researcher and research ethics professional based in Brooklyn. I study how meditation, awe and other altered states change the way we experience time and the self. More recently, I’ve been interested in exploring the shared versions: what happens to people at concerts and festivals.</p>
-    <dl class="facts">
-      <dt>Now</dt>
-      <dd>IRB Associate II, Icahn School of Medicine at Mount Sinai</dd>
-      <dt>Before</dt>
-      <dd>Clinical research coordinator, Columbia University Irving Medical Center</dd>
-      <dt>Education</dt>
-      <dd>B.A. in Psychology, cum laude, Rutgers University (honors thesis with David Wilder)</dd>
-    </dl>
+    <p class="lede">Psychology researcher and research ethics professional based in Brooklyn.</p>
+    <div class="intro">
+      <p>I’ve coordinated studies at Columbia University Irving Medical Center, worked in classrooms and now ensure regulatory compliance as an IRB Associate II in the Program for the Protection of Human Subjects at the Icahn School of Medicine at Mount Sinai.</p>
+      <p>I’m interested in studying how meditation, awe and other altered states change the way we experience time and the self. More recently, I’ve begun to explore shared versions of these experiences: what happens to people at concerts and festivals.</p>
+    </div>
     <div class="actions">
       <a class="btn primary" href="#research">Read the reanalysis</a>
       <a class="btn" href="Eitan-Scher-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
