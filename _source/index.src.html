@@ -228,13 +228,6 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .finding:last-child { border-bottom: 1px solid var(--rule); }
 .finding p { max-width: 64ch; color: var(--ink-2); }
 .finding-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; }
-.chip {
-  font-family: var(--display); font-size: 13px; font-weight: 600; color: var(--ink);
-  background: var(--chip); border-radius: 999px; padding: 3px 10px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
-}
-.meter { display: inline-flex; gap: 2px; }
-.meter i { width: 6px; height: 10px; border-radius: 1px; background: var(--z2); }
-.meter i.on { background: var(--ink-2); }
 .split { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); align-items: start; }
 @media (max-width: 860px) { .split { grid-template-columns: minmax(0, 1fr); } }
 
@@ -409,7 +402,7 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
             <tbody id="fig1-tbody"></tbody>
           </table>
         </div>
-        <p class="fig-note">54% of meditators chose 5–6 minutes. 70% of audiobook listeners chose the correct 7–8 minutes or longer, compared with 37% of meditators. Cohen's <i>d</i> = −0.63, 95% CI [−0.91, −0.36].</p>
+        <p class="fig-note">54% of meditators chose 5–6 minutes. 70% of audiobook listeners chose the correct 7–8 minutes or longer, compared with 37% of meditators. Cohen's <i>d</i>&nbsp;=&nbsp;−0.63, 95% CI [−0.91, −0.36].</p>
       </div>
 
       <div class="block">
@@ -428,25 +421,22 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
           <div class="finding">
             <div class="finding-top">
               <h4>Meditation made eight minutes feel shorter</h4>
-              <span class="chip"><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Strong evidence</span>
             </div>
-            <p>Meditators' estimates clustered around 5–6 minutes, while audiobook listeners' clustered around the correct 7–8. The difference was medium to large (<i>d</i> = −0.63; <i>F</i>(1, 210) = 23.13, <i>p</i> &lt; .001). The Bayes factor favors a real effect by about 5,200 to 1. The effect appeared under both kinds of focus. It looked larger in the narrative-focus groups, but that difference wasn't reliable, so I don't interpret it.</p>
+            <p>Meditators' estimates clustered around 5–6 minutes, while audiobook listeners' clustered around the correct 7–8. The difference was medium to large (<i>d</i>&nbsp;=&nbsp;−0.63; <i>F</i>(1, 210)&nbsp;=&nbsp;23.13, <i>p</i> &lt; .001). The Bayes factor favors a real effect by about 5,200 to 1. The effect appeared under both kinds of focus. It looked larger in the narrative-focus groups, but that difference wasn't reliable, so I don't interpret it.</p>
           </div>
           <div class="finding">
             <div class="finding-top">
               <h4>Self-awareness did not explain it</h4>
-              <span class="chip"><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>Moderate evidence of no link</span>
             </div>
-            <p>My original hypothesis was that meditation raises self-awareness, and self-awareness stretches time. Body-focused meditation did raise state self-awareness a little, but self-awareness had no relationship with the duration estimates: <i>r</i> = .00, 95% CI [−.14, .13]. The Bayes factor favors no link by about 6 to 1. The mirror, meant to raise self-awareness without meditation (<a href="https://doi.org/10.1177/0146167204271559">Phillips &amp; Silvia, 2005</a>), didn’t raise it.</p>
+            <p>My original hypothesis was that meditation raises self-awareness, and self-awareness stretches time. Body-focused meditation did raise state self-awareness a little, but self-awareness had no relationship with the duration estimates: <i>r</i>&nbsp;=&nbsp;.00, 95% CI [−.14, .13]. The Bayes factor favors no link by about 6 to 1. The mirror, meant to raise self-awareness without meditation (<a href="https://doi.org/10.1177/0146167204271559">Phillips &amp; Silvia, 2005</a>), didn’t raise it.</p>
           </div>
           <div class="finding split">
             <div>
               <div class="finding-top">
                 <h4>A smaller echo in seconds</h4>
-                <span class="chip"><span class="meter" aria-hidden="true"><i class="on"></i><i></i><i></i></span>Inconclusive</span>
               </div>
               <p style="margin-top:10px">In each condition, participants were shown four shapes on screen for 7, 17, 37 and 57 seconds and estimated how long each lasted, before and after listening to their recording.</p>
-              <p style="margin-top:10px">After meditating, their estimates fell further, to 80.7% of the true durations, compared with 87.4% after the audiobook, once each person's first estimates are taken into account (<i>p</i> = .016). The Bayes factor is only 2.4, so although the difference is statistically significant, the evidence for it is weak. The paper will treat this result as secondary.</p>
+              <p style="margin-top:10px">After meditating, their estimates fell further, to 80.7% of the true durations, compared with 87.4% after the audiobook, once each person's first estimates are taken into account (<i>p</i>&nbsp;=&nbsp;.016). The Bayes factor is only 2.4, so although the difference is statistically significant, the evidence for it is weak. The paper will treat this result as secondary.</p>
             </div>
             <div class="fig" id="fig2">
               <div class="fig-head">
@@ -484,9 +474,9 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
             <tbody>
               <tr><td>The answers are categories, not real numbers</td><td>A rank-based test (Mann–Whitney)</td><td>Same result, <i>p</i> &lt; .001</td></tr>
               <tr><td>Some people guessed the study was about time</td><td>Dropped the 24 to 29 who did</td><td>Still <i>p</i> &lt; .001</td></tr>
-              <tr><td>One participant may appear twice</td><td>Dropped the second record</td><td><i>F</i> = 24.22, against 23.13</td></tr>
-              <tr><td>Meditation groups reported more past meditation</td><td>Held prior experience constant</td><td><i>F</i> = 23.79, unchanged</td></tr>
-              <tr><td>Non-native English speakers were excluded</td><td>Added all 69 back (<i>N</i> = 283)</td><td><i>d</i> = −0.48, <i>p</i> &lt; .001</td></tr>
+              <tr><td>One participant may appear twice</td><td>Dropped the second record</td><td><i>F</i>&nbsp;=&nbsp;24.22, against 23.13</td></tr>
+              <tr><td>Meditation groups reported more past meditation</td><td>Held prior experience constant</td><td><i>F</i>&nbsp;=&nbsp;23.79, unchanged</td></tr>
+              <tr><td>Non-native English speakers were excluded</td><td>Added all 69 back (<i>N</i>&nbsp;=&nbsp;283)</td><td><i>d</i>&nbsp;=&nbsp;−0.48, <i>p</i> &lt; .001</td></tr>
             </tbody>
           </table>
         </div>
@@ -499,7 +489,7 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
             <thead><tr><th>Issue</th><th>2019 thesis</th><th>2026 reanalysis</th></tr></thead>
             <tbody>
               <tr><td>Shape trial</td><td>Each person counted four times, once per shape, as if there were 856 participants</td><td>One score per person, adjusted for the first trial. Reported as weak evidence.</td></tr>
-              <tr><td>Why time flew</td><td>Meditators were absorbed in flow</td><td>Ruled out. The focus difference came from the mirror group's instructions, and focus didn't predict estimates (<i>r</i> = −.03).</td></tr>
+              <tr><td>Why time flew</td><td>Meditators were absorbed in flow</td><td>Ruled out. The focus difference came from the mirror group's instructions, and focus didn't predict estimates (<i>r</i>&nbsp;=&nbsp;−.03).</td></tr>
               <tr><td>Self-awareness</td><td>A non-significant correlation</td><td>A Bayes factor of about 6 in favor of no link</td></tr>
               <tr><td>Statistics</td><td><i>p</i>-values from SPSS</td><td>Effect sizes with confidence intervals, Bayes factors, a permutation test and a mixed model</td></tr>
               <tr><td>Data files</td><td>Not audited</td><td>Found two condition codes swapped in the full-sample file and documented it. Every analysis now uses the correct columns; the thesis results were unaffected.</td></tr>
