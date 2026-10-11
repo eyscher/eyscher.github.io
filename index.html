@@ -867,26 +867,22 @@ try { var savedTheme = localStorage.getItem("eys-theme"); if (savedTheme === "li
       });
       host.appendChild(ol);
     }
-    var zones = [[lo, -1, "var(--z1)", "Strong"], [-1, -0.477, "var(--z2)", "Moderate"], [-0.477, 0.477, "var(--z3)", "Inconclusive"], [0.477, 1, "var(--z2)", "Moderate"], [1, hi, "var(--z1)", "Strong"]];
-    var allFit = zones.every(function (z) { return x(z[1]) - x(z[0]) > z[3].length * 6.2 + 10; });
-    zones.forEach(function (z) {
-      var x0 = x(z[0]), x1 = x(z[1]);
-      el("rect", { x: x0, y: stripTop, width: x1 - x0, height: stripH, fill: z[2] }, svg);
-      if (z[0] !== lo) el("line", { x1: x0, x2: x0, y1: stripTop, y2: stripTop + stripH, stroke: "var(--surface)", "stroke-width": 2 }, svg);   // white divider between zones
-      if (allFit) txt(svg, (x0 + x1) / 2, stripTop + 15, z[3], { "text-anchor": "middle", fill: "var(--ink-2)", "font-size": 11 });
-    });
-    if (!allFit) {
-      // Narrow screens: name the shaded zones in a legend instead of inside the strip
+    // One shaded band where the data can't decide (1/3 to 3); everything else is plain.
+    el("rect", { x: x(lo), y: stripTop, width: x(hi) - x(lo), height: stripH, fill: "none", stroke: "var(--rule)", "stroke-width": 1 }, svg);
+    var b0 = x(-0.477), b1 = x(0.477), bandLabel = "Can't decide";
+    el("rect", { x: b0, y: stripTop, width: b1 - b0, height: stripH, fill: "var(--z2)" }, svg);
+    var labelFits = (b1 - b0) > bandLabel.length * 6.2 + 10;
+    if (labelFits) txt(svg, (b0 + b1) / 2, stripTop + 15, bandLabel, { "text-anchor": "middle", fill: "var(--ink-2)", "font-size": 11 });
+    else {
+      // Narrow screens: name the band below the chart instead of inside it
       var zl = document.createElement("div"); zl.className = "bf-zones";
-      [["var(--z3)", "Inconclusive (1/3 to 3)"], ["var(--z2)", "Moderate (3 to 10, or 1/10 to 1/3)"], ["var(--z1)", "Strong (above 10, or below 1/10)"]].forEach(function (k) {
-        var sp = document.createElement("span"), sw = document.createElement("i");
-        sw.style.background = k[0]; sp.appendChild(sw); sp.appendChild(document.createTextNode(k[1])); zl.appendChild(sp);
-      });
+      var sp = document.createElement("span"), sw = document.createElement("i");
+      sw.style.background = "var(--z2)"; sp.appendChild(sw); sp.appendChild(document.createTextNode("Can't decide (1/3 to 3)")); zl.appendChild(sp);
       host.insertBefore(zl, svg.nextSibling);
     }
     el("line", { x1: x(0), x2: x(0), y1: stripTop + 21, y2: stripTop + stripH + 4, stroke: "var(--ink-3)", "stroke-width": 1 }, svg);
-    txt(svg, m.l, 14, "Evidence for no effect", { "font-weight": 600, fill: "var(--ink-2)" });
-    txt(svg, W - m.r, 14, "Evidence for an effect", { "text-anchor": "end", "font-weight": 600, fill: "var(--ink-2)" });
+    txt(svg, m.l, 14, "\u2190 Favors no effect", { "font-weight": 600, fill: "var(--ink-2)" });
+    txt(svg, W - m.r, 14, "Favors an effect \u2192", { "text-anchor": "end", "font-weight": 600, fill: "var(--ink-2)" });
     var ticks = [[-1, "1/10"], [-0.477, "1/3"], [0, "1"], [0.477, "3"], [1, "10"], [2, "100"], [3, "1,000"], [4, "10,000"]];
     ticks.forEach(function (t) {
       var tx = x(t[0]);
